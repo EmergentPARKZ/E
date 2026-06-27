@@ -1,22 +1,15 @@
-# 🚀 REBOUT — Master Launch Code
-### EmergentPARKZ | FPV Operations Platform
+# 🚀 EMERGENTPARKZ - FULL PLATFORM CODE
+## Complete Cut & Paste for GitHub Pages
 
 ---
 
-## 📋 Setup Commands First
-```bash
-echo "# REBOUT" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/EmergentPARKZ/REBOUT.git
-git push -u origin main
-```
+> ⚠️ **IMPORTANT NOTES BEFORE PASTING:**
+> - Go to your repo → click `index.html` → click pencil ✏️ to edit
+> - Select ALL existing code → DELETE it
+> - Paste the code below → Commit changes
+> - Site live at: **https://emergentparkz.github.io/emergent-platform/**
 
 ---
-
-## 🎯 MASTER index.html — Full Platform Code
 
 ```html
 <!DOCTYPE html>
@@ -24,2175 +17,1535 @@ git push -u origin main
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>REBOUT | FPV Operations Platform</title>
-<meta name="description" content="REBOUT — Global FPV Operations, RC Racing, Heavy Equipment, Live Events">
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
-<!-- Google Icons -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
-
+<title>EmergentPARKZ — AI Factory Platform</title>
 <style>
-/* ============================================
-   REBOUT MASTER STYLES — RWB PATRIOT THEME
-   ============================================ */
-:root {
-  --red: #CC0000;
-  --red-bright: #FF1111;
-  --red-dark: #880000;
-  --white: #FFFFFF;
-  --white-dim: #CCCCCC;
-  --blue: #003399;
-  --blue-bright: #1144FF;
-  --blue-dark: #001166;
-  --black: #000000;
-  --black-soft: #0A0A0A;
-  --black-panel: #111111;
-  --black-card: #1A1A1A;
-  --gold: #FFD700;
-  --green: #00FF44;
-  --orange: #FF6600;
-  --glow-red: 0 0 10px #CC0000, 0 0 20px #CC000066;
-  --glow-blue: 0 0 10px #003399, 0 0 20px #00339966;
-  --glow-white: 0 0 10px #FFFFFF66;
-  --border-red: 1px solid #CC000066;
-  --border-blue: 1px solid #00339966;
-  --border-white: 1px solid #FFFFFF22;
-  --font-main: 'Orbitron', monospace;
-  --font-body: 'Rajdhani', sans-serif;
-  --font-mono: 'Share Tech Mono', monospace;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  background: var(--black);
-  color: var(--white);
-  font-family: var(--font-body);
-  font-size: 14px;
-  overflow-x: hidden;
-  min-height: 100vh;
-}
-
-/* ---- SCROLLBAR ---- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: var(--black-panel); }
-::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
-
-/* ============================================
-   TOP COMMAND BAR
-   ============================================ */
-#topbar {
-  background: linear-gradient(90deg, var(--black) 0%, var(--blue-dark) 40%, var(--red-dark) 60%, var(--black) 100%);
-  border-bottom: 2px solid var(--red);
-  padding: 8px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: var(--glow-red);
-}
-
-#topbar .logo {
-  font-family: var(--font-main);
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: 6px;
-  background: linear-gradient(90deg, #FF1111, #FFFFFF, #1144FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: none;
-  cursor: pointer;
-}
-
-#topbar .logo span {
-  font-size: 11px;
-  display: block;
-  letter-spacing: 3px;
-  background: linear-gradient(90deg, #FF1111, #FFFFFF, #1144FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-#topbar .top-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.top-btn {
-  background: transparent;
-  border: 1px solid var(--white-dim);
-  color: var(--white);
-  padding: 5px 12px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: all 0.2s;
-  text-transform: uppercase;
-}
-
-.top-btn:hover { background: var(--red); border-color: var(--red); box-shadow: var(--glow-red); }
-.top-btn.blue:hover { background: var(--blue); border-color: var(--blue); box-shadow: var(--glow-blue); }
-.top-btn.active { background: var(--red); border-color: var(--red-bright); }
-
-#clock {
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--green);
-  letter-spacing: 2px;
-  min-width: 80px;
-}
-
-#status-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 8px var(--green);
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.8); }
-}
-
-/* ============================================
-   AD BANNER TOP
-   ============================================ */
-#ad-top {
-  background: linear-gradient(90deg, var(--blue-dark), var(--black-panel), var(--red-dark));
-  border-bottom: 1px solid var(--red-dark);
-  padding: 6px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 11px;
-  color: var(--white-dim);
-}
-
-#ad-top .ad-slot {
-  background: var(--black-card);
-  border: 1px solid var(--gold);
-  padding: 4px 16px;
-  border-radius: 2px;
-  font-family: var(--font-mono);
-  color: var(--gold);
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
-/* ============================================
-   TICKER TAPE
-   ============================================ */
-#ticker {
-  background: var(--red-dark);
-  border-bottom: 1px solid var(--red);
-  padding: 5px 0;
-  overflow: hidden;
-  white-space: nowrap;
-}
-
-#ticker-inner {
-  display: inline-block;
-  animation: ticker 40s linear infinite;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--white);
-  letter-spacing: 1px;
-}
-
-@keyframes ticker {
-  0% { transform: translateX(100vw); }
-  100% { transform: translateX(-100%); }
-}
-
-/* ============================================
-   MAIN LAYOUT — 3 COLUMNS
-   ============================================ */
-#main-layout {
-  display: grid;
-  grid-template-columns: 220px 1fr 220px;
-  gap: 0;
-  min-height: calc(100vh - 120px);
-}
-
-/* ============================================
-   LEFT PANEL
-   ============================================ */
-#left-panel {
-  background: var(--black-panel);
-  border-right: var(--border-red);
-  padding: 12px 8px;
-  overflow-y: auto;
-  max-height: calc(100vh - 120px);
-}
-
-.panel-title {
-  font-family: var(--font-main);
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--red);
-  text-transform: uppercase;
-  padding: 6px 8px;
-  border-bottom: var(--border-red);
-  margin-bottom: 8px;
-}
-
-.agent-category {
-  margin-bottom: 6px;
-}
-
-.agent-cat-header {
-  background: var(--black-card);
-  border: var(--border-red);
-  border-left: 3px solid var(--red);
-  padding: 7px 10px;
-  cursor: pointer;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: var(--white);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.2s;
-  text-transform: uppercase;
-}
-
-.agent-cat-header:hover { background: var(--red-dark); border-left-color: var(--red-bright); }
-.agent-cat-header.active { background: var(--red-dark); border-left-color: var(--gold); color: var(--gold); }
-
-.agent-list {
-  display: none;
-  background: var(--black);
-  border: var(--border-red);
-  border-top: none;
-}
-
-.agent-list.open { display: block; }
-
-.agent-item {
-  padding: 6px 14px;
-  font-size: 11px;
-  color: var(--white-dim);
-  cursor: pointer;
-  border-bottom: 1px solid #1A1A1A;
-  transition: all 0.15s;
-  font-family: var(--font-body);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.agent-item:hover { background: var(--blue-dark); color: var(--white); padding-left: 20px; }
-.agent-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
-.agent-item .dot.red { background: var(--red); }
-.agent-item .dot.yellow { background: var(--gold); }
-
-/* ============================================
-   CENTER PANEL
-   ============================================ */
-#center-panel {
-  background: var(--black-soft);
-  overflow-y: auto;
-  max-height: calc(100vh - 120px);
-}
-
-/* Camera Mosaic */
-#camera-section {
-  padding: 10px;
-  border-bottom: var(--border-red);
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-.section-title {
-  font-family: var(--font-main);
-  font-size: 11px;
-  letter-spacing: 3px;
-  color: var(--red);
-  text-transform: uppercase;
-}
-
-.view-controls {
-  display: flex;
-  gap: 4px;
-}
-
-.view-btn {
-  background: var(--black-card);
-  border: var(--border-white);
-  color: var(--white-dim);
-  padding: 3px 8px;
-  font-size: 10px;
-  cursor: pointer;
-  border-radius: 2px;
-  font-family: var(--font-body);
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: all 0.2s;
-}
-
-.view-btn:hover, .view-btn.active { background: var(--red); border-color: var(--red); color: var(--white); }
-
-#camera-mosaic {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 4px;
-}
-
-.camera-cell {
-  background: var(--black);
-  border: 1px solid #222;
-  aspect-ratio: 16/9;
-  position: relative;
-  cursor: pointer;
-  overflow: hidden;
-  transition: border-color 0.2s;
-}
-
-.camera-cell:hover { border-color: var(--red); }
-.camera-cell.active { border-color: var(--gold); box-shadow: 0 0 8px var(--gold); }
-.camera-cell.fullscreen { grid-column: 1 / -1; grid-row: 1 / 3; }
-
-.camera-feed {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: repeating-linear-gradient(
-    45deg,
-    #0A0A0A,
-    #0A0A0A 10px,
-    #111 10px,
-    #111 20px
-  );
-}
-
-.camera-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 6px;
-  pointer-events: none;
-}
-
-.cam-label {
-  background: rgba(0,0,0,0.8);
-  border: 1px solid var(--red);
-  padding: 2px 6px;
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--red);
-  letter-spacing: 1px;
-  align-self: flex-start;
-}
-
-.cam-status {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-
-.cam-signal {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--green);
-  background: rgba(0,0,0,0.8);
-  padding: 2px 5px;
-}
-
-.cam-fps {
-  font-family: var(--font-mono);
-  font-size: 9px;
-  color: var(--gold);
-  background: rgba(0,0,0,0.8);
-  padding: 2px 5px;
-}
-
-.no-signal {
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #333;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-/* Command Terminal */
-#command-section {
-  padding: 10px;
-  border-bottom: var(--border-blue);
-}
-
-#terminal {
-  background: var(--black);
-  border: 1px solid #1A3300;
-  padding: 8px;
-  height: 120px;
-  overflow-y: auto;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--green);
-  margin-bottom: 8px;
-  border-radius: 2px;
-}
-
-.terminal-line { margin-bottom: 2px; line-height: 1.4; }
-.terminal-line .ts { color: #446644; margin-right: 6px; }
-.terminal-line .cmd { color: var(--green); }
-.terminal-line .err { color: var(--red); }
-.terminal-line .warn { color: var(--gold); }
-.terminal-line .info { color: var(--blue-bright); }
-
-#command-input-row {
-  display: flex;
-  gap: 6px;
-}
-
-#command-input {
-  flex: 1;
-  background: var(--black);
-  border: 1px solid var(--blue);
-  color: var(--green);
-  padding: 6px 10px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  border-radius: 2px;
-  outline: none;
-}
-
-#command-input:focus { border-color: var(--green); box-shadow: 0 0 6px #00FF4444; }
-
-.cmd-btn {
-  background: var(--blue-dark);
-  border: 1px solid var(--blue);
-  color: var(--white);
-  padding: 6px 12px;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 2px;
-  letter-spacing: 1px;
-  transition: all 0.2s;
-}
-
-.cmd-btn:hover { background: var(--blue); box-shadow: var(--glow-blue); }
-
-/* Quick Commands */
-#quick-commands {
-  padding: 8px 10px;
-  border-bottom: var(--border-red);
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
-
-.quick-btn {
-  background: var(--black-card);
-  border: var(--border-white);
-  color: var(--white-dim);
-  padding: 4px 10px;
-  font-size: 10px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  border-radius: 2px;
-  transition: all 0.2s;
-  text-transform: uppercase;
-}
-
-.quick-btn:hover { background: var(--blue-dark); border-color: var(--blue); color: var(--white); }
-.quick-btn.red { border-color: var(--red-dark); }
-.quick-btn.red:hover { background: var(--red-dark); border-color: var(--red); }
-
-/* Telemetry Bar */
-#telemetry-bar {
-  padding: 8px 10px;
-  background: var(--black-panel);
-  border-bottom: var(--border-blue);
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 6px;
-}
-
-.tele-item {
-  background: var(--black);
-  border: var(--border-blue);
-  padding: 5px 8px;
-  border-radius: 2px;
-  text-align: center;
-}
-
-.tele-label {
-  font-family: var(--font-mono);
-  font-size: 8px;
-  color: var(--blue-bright);
-  letter-spacing: 1px;
-  display: block;
-  margin-bottom: 2px;
-}
-
-.tele-value {
-  font-family: var(--font-mono);
-  font-size: 14px;
-  color: var(--white);
-  font-weight: bold;
-}
-
-.tele-value.green { color: var(--green); }
-.tele-value.red { color: var(--red); }
-.tele-value.gold { color: var(--gold); }
-
-/* Participant + Chat */
-#social-section {
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.social-box {
-  background: var(--black);
-  border: var(--border-white);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.social-box-header {
-  background: var(--black-card);
-  padding: 5px 10px;
-  font-family: var(--font-main);
-  font-size: 9px;
-  letter-spacing: 2px;
-  color: var(--red);
-  border-bottom: var(--border-red);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.social-box-body {
-  padding: 6px;
-  height: 140px;
-  overflow-y: auto;
-}
-
-.participant-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 4px;
-  border-bottom: 1px solid #111;
-  font-size: 11px;
-  color: var(--white-dim);
-}
-
-.participant-item .role-badge {
-  font-size: 8px;
-  padding: 1px 4px;
-  border-radius: 2px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.role-badge.admin { background: var(--gold); color: var(--black); }
-.role-badge.operator { background: var(--red); color: var(--white); }
-.role-badge.camera { background: var(--blue); color: var(--white); }
-.role-badge.spectator { background: #333; color: var(--white-dim); }
-.role-badge.judge { background: var(--orange); color: var(--white); }
-
-.chat-message {
-  padding: 3px 4px;
-  border-bottom: 1px solid #111;
-  font-size: 11px;
-  line-height: 1.4;
-}
-
-.chat-name { color: var(--red); font-weight: 700; margin-right: 4px; }
-.chat-text { color: var(--white-dim); }
-
-.chat-input-row {
-  display: flex;
-  border-top: var(--border-white);
-}
-
-.chat-input {
-  flex: 1;
-  background: var(--black);
-  border: none;
-  color: var(--white);
-  padding: 5px 8px;
-  font-family: var(--font-body);
-  font-size: 11px;
-  outline: none;
-}
-
-.chat-send {
-  background: var(--red-dark);
-  border: none;
-  color: var(--white);
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 11px;
-  font-weight: 700;
-  transition: background 0.2s;
-}
-
-.chat-send:hover { background: var(--red); }
-
-/* ============================================
-   RIGHT PANEL
-   ============================================ */
-#right-panel {
-  background: var(--black-panel);
-  border-left: var(--border-blue);
-  padding: 12px 8px;
-  overflow-y: auto;
-  max-height: calc(100vh - 120px);
-}
-
-/* Leaderboard */
-.leaderboard-item {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 6px;
-  border-bottom: 1px solid #1A1A1A;
-  font-size: 11px;
-  transition: background 0.15s;
-  cursor: pointer;
-}
-
-.leaderboard-item:hover { background: var(--blue-dark); }
-
-.lb-rank {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: bold;
-  min-width: 20px;
-  text-align: center;
-}
-
-.lb-rank.gold { color: var(--gold); }
-.lb-rank.silver { color: #AAAAAA; }
-.lb-rank.bronze { color: #CD7F32; }
-
-.lb-name { flex: 1; color: var(--white); font-weight: 600; }
-.lb-score { font-family: var(--font-mono); color: var(--green); font-size: 11px; }
-.lb-vehicle { font-size: 9px; color: var(--white-dim); }
-
-/* Portal Links */
-.portal-link {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 8px;
-  margin-bottom: 4px;
-  background: var(--black-card);
-  border: var(--border-white);
-  border-left: 3px solid var(--blue);
-  cursor: pointer;
-  transition: all 0.2s;
-  border-radius: 2px;
-}
-
-.portal-link:hover { background: var(--blue-dark); border-left-color: var(--blue-bright); }
-.portal-link .portal-icon { font-size: 16px; }
-.portal-link .portal-text { font-size: 11px; font-weight: 700; letter-spacing: 1px; color: var(--white); text-transform: uppercase; }
-.portal-link .portal-sub { font-size: 9px; color: var(--white-dim); }
-
-/* Emergency Stop */
-#emergency-stop {
-  background: linear-gradient(135deg, var(--red-dark), #440000);
-  border: 2px solid var(--red);
-  padding: 12px;
-  text-align: center;
-  cursor: pointer;
-  margin-bottom: 8px;
-  border-radius: 3px;
-  transition: all 0.2s;
-  animation: emergency-pulse 2s infinite;
-}
-
-#emergency-stop:hover {
-  background: var(--red);
-  box-shadow: var(--glow-red);
-  transform: scale(1.02);
-}
-
-@keyframes emergency-pulse {
-  0%, 100% { box-shadow: 0 0 5px var(--red); }
-  50% { box-shadow: 0 0 20px var(--red), 0 0 40px var(--red-dark); }
-}
-
-#emergency-stop .e-icon { font-size: 24px; display: block; }
-#emergency-stop .e-text { font-family: var(--font-main); font-size: 11px; letter-spacing: 3px; color: var(--white); }
-
-/* Event Info Box */
-.event-info-box {
-  background: var(--black);
-  border: var(--border-gold, 1px solid var(--gold));
-  padding: 8px;
-  margin-bottom: 8px;
-  border-radius: 2px;
-}
-
-.event-name {
-  font-family: var(--font-main);
-  font-size: 11px;
-  color: var(--gold);
-  letter-spacing: 2px;
-  margin-bottom: 4px;
-}
-
-.event-detail {
-  font-size: 10px;
-  color: var(--white-dim);
-  line-height: 1.6;
-  font-family: var(--font-mono);
-}
-
-/* ============================================
-   FOOTER
-   ============================================ */
-#footer {
-  background: var(--black-panel);
-  border-top: 2px solid var(--blue);
-  padding: 10px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 10px;
-  color: var(--white-dim);
-  font-family: var(--font-mono);
-}
-
-#footer .footer-logo {
-  font-family: var(--font-main);
-  font-size: 14px;
-  font-weight: 900;
-  background: linear-gradient(90deg, #FF1111, #FFFFFF, #1144FF);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  letter-spacing: 4px;
-}
-
-#footer .footer-links { display: flex; gap: 16px; }
-#footer .footer-links a { color: var(--white-dim); text-decoration: none; transition: color 0.2s; }
-#footer .footer-links a:hover { color: var(--red); }
-
-/* ============================================
-   MODALS
-   ============================================ */
-.modal-overlay {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.92);
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-overlay.active { display: flex; }
-
-.modal-box {
-  background: var(--black-panel);
-  border: 1px solid var(--red);
-  box-shadow: var(--glow-red);
-  width: 90%;
-  max-width: 600px;
-  max-height: 85vh;
-  overflow-y: auto;
-  border-radius: 4px;
-  animation: modalIn 0.2s ease;
-}
-
-@keyframes modalIn {
-  from { transform: scale(0.95); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.modal-header {
-  background: linear-gradient(90deg, var(--red-dark), var(--black-card));
-  padding: 12px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: var(--border-red);
-}
-
-.modal-title {
-  font-family: var(--font-main);
-  font-size: 14px;
-  letter-spacing: 3px;
-  color: var(--white);
-  text-transform: uppercase;
-}
-
-.modal-close {
-  background: none;
-  border: 1px solid var(--white-dim);
-  color: var(--white);
-  width: 28px; height: 28px;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-}
-
-.modal-close:hover { background: var(--red); border-color: var(--red); }
-
-.modal-body { padding: 16px; }
-
-/* Form Styles */
-.form-group { margin-bottom: 14px; }
-.form-label {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: 10px;
-  color: var(--blue-bright);
-  letter-spacing: 2px;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
-
-.form-input, .form-select {
-  width: 100%;
-  background: var(--black);
-  border: 1px solid #333;
-  color: var(--white);
-  padding: 8px 12px;
-  font-family: var(--font-body);
-  font-size: 13px;
-  border-radius: 2px;
-  outline: none;
-  transition: border-color 0.2s;
-}
-
-.form-input:focus, .form-select:focus { border-color: var(--red); }
-.form-select option { background: var(--black-panel); }
-
-.form-btn {
-  background: var(--red-dark);
-  border: 1px solid var(--red);
-  color: var(--white);
-  padding: 10px 20px;
-  font-family: var(--font-main);
-  font-size: 11px;
-  letter-spacing: 2px;
-  cursor: pointer;
-  border-radius: 2px;
-  width: 100%;
-  transition: all 0.2s;
-  text-transform: uppercase;
-}
-
-.form-btn:hover { background: var(--red); box-shadow: var(--glow-red); }
-.form-btn.blue { background: var(--blue-dark); border-color: var(--blue); }
-.form-btn.blue:hover { background: var(--blue); box-shadow: var(--glow-blue); }
-
-.google-btn {
-  background: var(--white);
-  border: none;
-  color: var(--black);
-  padding: 10px 20px;
-  font-family: var(--font-body);
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 3px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  transition: all 0.2s;
-  margin-bottom: 10px;
-}
-
-.google-btn:hover { background: #F0F0F0; box-shadow: 0 2px 8px rgba(255,255,255,0.3); }
-
-.divider {
-  text-align: center;
-  color: #444;
-  font-size: 11px;
-  margin: 12px 0;
-  position: relative;
-}
-
-.divider::before, .divider::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  width: 40%;
-  height: 1px;
-  background: #333;
-}
-
-.divider::before { left: 0; }
-.divider::after { right: 0; }
-
-/* Emergency Modal */
-#emergency-modal .modal-box { border-color: var(--red); }
-#emergency-modal .modal-header { background: var(--red-dark); }
-
-.emergency-content {
-  text-align: center;
-  padding: 20px;
-}
-
-.emergency-icon { font-size: 64px; display: block; margin-bottom: 12px; }
-
-.emergency-title {
-  font-family: var(--font-main);
-  font-size: 20px;
-  color: var(--red);
-  letter-spacing: 4px;
-  margin-bottom: 8px;
-}
-
-.emergency-sub {
-  color: var(--white-dim);
-  font-size: 13px;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.emergency-confirm-btn {
-  background: var(--red);
-  border: 2px solid var(--red-bright);
-  color: var(--white);
-  padding: 14px 30px;
-  font-family: var(--font-main);
-  font-size: 14px;
-  letter-spacing: 3px;
-  cursor: pointer;
-  border-radius: 3px;
-  width: 100%;
-  box-shadow: var(--glow-red);
-  transition: all 0.2s;
-  margin-bottom: 8px;
-}
-
-.emergency-confirm-btn:hover { background: var(--red-bright); transform: scale(1.02); }
-
-.emergency-cancel-btn {
-  background: transparent;
-  border: 1px solid #444;
-  color: var(--white-dim);
-  padding: 8px 20px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  cursor: pointer;
-  border-radius: 2px;
-  width: 100%;
-  transition: all 0.2s;
-}
-
-.emergency-cancel-btn:hover { background: #222; }
-
-/* Protocol Download */
-.protocol-section {
-  margin-bottom: 16px;
-  border: var(--border-blue);
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.protocol-section-title {
-  background: var(--blue-dark);
-  padding: 7px 12px;
-  font-family: var(--font-main);
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--white);
-  text-transform: uppercase;
-}
-
-.protocol-section-body {
-  padding: 10px 12px;
-  font-size: 12px;
-  color: var(--white-dim);
-  line-height: 1.7;
-}
-
-.protocol-section-body ul { padding-left: 16px; }
-.protocol-section-body li { margin-bottom: 4px; }
-
-/* Tabs */
-.modal-tabs {
-  display: flex;
-  border-bottom: var(--border-red);
-  margin-bottom: 16px;
-}
-
-.modal-tab {
-  padding: 8px 16px;
-  font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  cursor: pointer;
-  color: var(--white-dim);
-  border-bottom: 2px solid transparent;
-  transition: all 0.2s;
-  text-transform: uppercase;
-}
-
-.modal-tab:hover { color: var(--white); }
-.modal-tab.active { color: var(--red); border-bottom-color: var(--red); }
-
-.tab-content { display: none; }
-.tab-content.active { display: block; }
-
-/* Grid cards */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-  margin-bottom: 12px;
-}
-
-.info-card {
-  background: var(--black);
-  border: var(--border-white);
-  padding: 10px;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.info-card:hover { border-color: var(--red); background: var(--black-card); }
-.info-card .card-icon { font-size: 20px; margin-bottom: 4px; }
-.info-card .card-title { font-family: var(--font-main); font-size: 10px; color: var(--white); letter-spacing: 1px; }
-.info-card .card-sub { font-size: 10px; color: var(--white-dim); margin-top: 2px; }
-
-/* ============================================
-   AD BANNER BOTTOM
-   ============================================ */
-#ad-bottom {
-  background: var(--black-panel);
-  border-top: 1px solid var(--blue-dark);
-  padding: 8px 16px;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.ad-banner {
-  background: var(--black-card);
-  border: 1px solid #222;
-  padding: 6px 20px;
-  font-size: 10px;
-  color: var(--white-dim);
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0.2s;
-  font-family: var(--font-mono);
-  letter-spacing: 1px;
-}
-
-.ad-banner:hover { border-color: var(--gold); color: var(--gold); }
-.ad-banner.sponsor { border-color: var(--gold); color: var(--gold); }
-
-/* ============================================
-   NOTIFICATION TOAST
-   ============================================ */
-#toast-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 3000;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.toast {
-  background: var(--black-panel);
-  border-left: 3px solid var(--green);
-  padding: 10px 14px;
-  font-size: 12px;
-  color: var(--white);
-  border-radius: 2px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  animation: toastIn 0.3s ease;
-  max-width: 280px;
-  font-family: var(--font-body);
-}
-
-.toast.error { border-left-color: var(--red); }
-.toast.warn { border-left-color: var(--gold); }
-.toast.info { border-left-color: var(--blue-bright); }
-
-@keyframes toastIn {
-  from { transform: translateX(100%); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-@media (max-width: 900px) {
-  #main-layout { grid-template-columns: 1fr; }
-  #left-panel, #right-panel { max-height: none; }
-  #camera-mosaic { grid-template-columns: 1fr; }
-  #telemetry-bar { grid-template-columns: repeat(3, 1fr); }
-  #social-section { grid-template-columns: 1fr; }
-  .card-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 600px) {
-  #topbar .logo { font-size: 20px; }
-  #telemetry-bar { grid-template-columns: repeat(2, 1fr); }
-}
+  :root {
+    --bg: #0a0a0f;
+    --panel: #12121a;
+    --card: #1a1a2e;
+    --border: #2a2a4a;
+    --accent: #00d4ff;
+    --green: #00ff88;
+    --red: #ff4466;
+    --gold: #ffd700;
+    --purple: #9b59b6;
+    --orange: #ff6b35;
+    --text: #e0e0ff;
+    --dim: #8888aa;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, #0a0a1a, #1a0a2e, #0a1a2e);
+    border-bottom: 2px solid var(--accent);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .logo {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--accent);
+    letter-spacing: 2px;
+  }
+  .logo span { color: var(--gold); }
+  .header-status {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .status-pill {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 0.75em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .dot { width:8px; height:8px; border-radius:50%; }
+  .dot.green { background:var(--green); box-shadow:0 0 8px var(--green); animation:pulse 2s infinite; }
+  .dot.red { background:var(--red); }
+  .dot.gold { background:var(--gold); box-shadow:0 0 8px var(--gold); animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+
+  /* AUTH BUTTONS */
+  .auth-area { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+  .btn-google {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s;
+  }
+  .btn-google:hover { transform:scale(1.05); box-shadow:0 0 15px #4285f4; }
+  .user-badge {
+    background: var(--card);
+    border: 1px solid var(--green);
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 0.8em;
+    color: var(--green);
+    display: none;
+  }
+
+  /* SEASON BANNER */
+  .season-banner {
+    background: linear-gradient(135deg, #1a0000, #2a0000, #1a0000);
+    border-bottom: 2px solid var(--red);
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 0.9em;
+    letter-spacing: 3px;
+    color: var(--gold);
+    text-shadow: 0 0 10px var(--gold);
+  }
+
+  /* NAV TABS */
+  .nav-tabs {
+    display: flex;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    overflow-x: auto;
+    padding: 0 10px;
+  }
+  .tab {
+    padding: 12px 18px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    font-size: 0.8em;
+    white-space: nowrap;
+    transition: all 0.3s;
+    color: var(--dim);
+  }
+  .tab:hover { color: var(--accent); }
+  .tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    background: rgba(0,212,255,0.05);
+  }
+
+  /* MAIN CONTENT */
+  .main { padding: 20px; max-width: 1400px; margin: 0 auto; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* GRID LAYOUTS */
+  .grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:20px; }
+  .grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(400px,1fr)); gap:20px; }
+  .grid-4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px; }
+
+  /* PANELS */
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .panel::before {
+    content:'';
+    position:absolute;
+    top:0; left:0; right:0;
+    height:2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  .panel.agent-1::before { background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .panel.agent-2::before { background: linear-gradient(90deg, transparent, var(--green), transparent); }
+  .panel.agent-3::before { background: linear-gradient(90deg, transparent, var(--purple), transparent); }
+
+  .panel-title {
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* AGENT CARDS */
+  .agent-card {
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    position: relative;
+  }
+  .agent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  .agent-name { font-size: 1.2em; font-weight: bold; }
+  .agent-role { font-size: 0.75em; color: var(--dim); margin-top: 3px; }
+  .agent-avatar {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    border: 2px solid var(--border);
+  }
+
+  /* TOGGLE SWITCH */
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0;
+  }
+  .toggle-label { font-size: 0.8em; color: var(--dim); }
+  .toggle {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    cursor: pointer;
+  }
+  .toggle input { opacity:0; width:0; height:0; }
+  .toggle-slider {
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: #333;
+    border-radius: 24px;
+    transition: 0.3s;
+  }
+  .toggle-slider:before {
+    content:'';
+    position:absolute;
+    width:18px; height:18px;
+    left:3px; top:3px;
+    background: white;
+    border-radius:50%;
+    transition:0.3s;
+  }
+  input:checked + .toggle-slider { background: var(--green); }
+  input:checked + .toggle-slider:before { transform:translateX(24px); }
+
+  /* BUTTONS */
+  .btn {
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: 'Courier New', monospace;
+  }
+  .btn-primary { background: var(--accent); color: #000; }
+  .btn-primary:hover { box-shadow: 0 0 15px var(--accent); transform:scale(1.05); }
+  .btn-success { background: var(--green); color: #000; }
+  .btn-success:hover { box-shadow: 0 0 15px var(--green); }
+  .btn-danger { background: var(--red); color: white; }
+  .btn-danger:hover { box-shadow: 0 0 15px var(--red); }
+  .btn-gold { background: var(--gold); color: #000; }
+  .btn-gold:hover { box-shadow: 0 0 15px var(--gold); }
+  .btn-purple { background: var(--purple); color: white; }
+  .btn-purple:hover { box-shadow: 0 0 15px var(--purple); }
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+  }
+  .btn-outline:hover { background: var(--accent); color: #000; }
+  .btn-sm { padding: 5px 10px; font-size: 0.75em; }
+  .btn-full { width: 100%; margin-top: 8px; }
+
+  /* SOCIAL PLATFORM BUTTONS */
+  .social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    font-size: 0.8em;
+    font-weight: bold;
+    transition: all 0.3s;
+    background: var(--panel);
+    color: var(--text);
+    text-decoration: none;
+    position: relative;
+  }
+  .social-btn:hover { transform:translateY(-2px); }
+  .social-btn .status-dot {
+    width:8px; height:8px; border-radius:50%;
+    background: var(--red);
+    position:absolute; top:6px; right:6px;
+  }
+  .social-btn.connected .status-dot { background: var(--green); box-shadow:0 0 6px var(--green); }
+  .social-btn.tiktok { border-color: #ff0050; }
+  .social-btn.tiktok:hover { background:#ff005020; box-shadow:0 0 10px #ff0050; }
+  .social-btn.youtube { border-color: #ff0000; }
+  .social-btn.youtube:hover { background:#ff000020; box-shadow:0 0 10px #ff0000; }
+  .social-btn.instagram { border-color: #e1306c; }
+  .social-btn.instagram:hover { background:#e1306c20; box-shadow:0 0 10px #e1306c; }
+  .social-btn.twitter { border-color: #1da1f2; }
+  .social-btn.twitter:hover { background:#1da1f220; box-shadow:0 0 10px #1da1f2; }
+  .social-btn.facebook { border-color: #1877f2; }
+  .social-btn.facebook:hover { background:#1877f220; box-shadow:0 0 10px #1877f2; }
+  .social-btn.etsy { border-color: #f56400; }
+  .social-btn.etsy:hover { background:#f5640020; box-shadow:0 0 10px #f56400; }
+  .social-btn.spotify { border-color: #1db954; }
+  .social-btn.spotify:hover { background:#1db95420; box-shadow:0 0 10px #1db954; }
+  .social-btn.soundcloud { border-color: #ff5500; }
+  .social-btn.soundcloud:hover { background:#ff550020; box-shadow:0 0 10px #ff5500; }
+  .social-btn.linkedin { border-color: #0077b5; }
+  .social-btn.linkedin:hover { background:#0077b520; box-shadow:0 0 10px #0077b5; }
+  .social-btn.pinterest { border-color: #e60023; }
+  .social-btn.pinterest:hover { background:#e6002320; box-shadow:0 0 10px #e60023; }
+  .social-btn.twitch { border-color: #9146ff; }
+  .social-btn.twitch:hover { background:#9146ff20; box-shadow:0 0 10px #9146ff; }
+  .social-btn.discord { border-color: #5865f2; }
+  .social-btn.discord:hover { background:#5865f220; box-shadow:0 0 10px #5865f2; }
+
+  /* STAT BOXES */
+  .stat-box {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+  }
+  .stat-num { font-size: 1.8em; font-weight: bold; color: var(--accent); }
+  .stat-label { font-size: 0.7em; color: var(--dim); margin-top: 4px; }
+
+  /* PROGRESS BAR */
+  .progress-bar {
+    background: var(--border);
+    border-radius: 10px;
+    height: 8px;
+    margin: 8px 0;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--accent), var(--green));
+    transition: width 1s ease;
+  }
+
+  /* ACTIVITY LOG */
+  .log-area {
+    background: #050508;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    height: 150px;
+    overflow-y: auto;
+    font-size: 0.75em;
+    color: var(--green);
+    font-family: 'Courier New', monospace;
+  }
+  .log-entry { margin: 3px 0; }
+  .log-entry.warn { color: var(--gold); }
+  .log-entry.error { color: var(--red); }
+  .log-entry.info { color: var(--accent); }
+
+  /* MODAL */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal-overlay.open { display:flex; }
+  .modal {
+    background: var(--card);
+    border: 1px solid var(--accent);
+    border-radius: 16px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+  }
+  .modal-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .modal-close {
+    position:absolute; top:15px; right:15px;
+    background:none; border:none; color:var(--dim);
+    font-size:1.5em; cursor:pointer;
+  }
+  .modal-close:hover { color:var(--red); }
+  .form-group { margin: 12px 0; }
+  .form-label { font-size:0.8em; color:var(--dim); margin-bottom:5px; display:block; }
+  .form-input {
+    width:100%;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px;
+    color: var(--text);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+  }
+  .form-input:focus { outline:none; border-color:var(--accent); }
+
+  /* REVENUE BARS */
+  .rev-item {
+    display:flex; align-items:center; gap:10px;
+    margin:8px 0;
+  }
+  .rev-label { font-size:0.8em; width:100px; color:var(--dim); }
+  .rev-bar { flex:1; background:var(--border); border-radius:10px; height:10px; overflow:hidden; }
+  .rev-fill { height:100%; border-radius:10px; transition:width 1s; }
+  .rev-val { font-size:0.8em; color:var(--gold); width:60px; text-align:right; }
+
+  /* SECTION TITLE */
+  .section-title {
+    font-size: 1.1em;
+    color: var(--accent);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* TASK ITEM */
+  .task-item {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .task-info { flex:1; }
+  .task-name { font-size:0.85em; font-weight:bold; }
+  .task-desc { font-size:0.7em; color:var(--dim); margin-top:3px; }
+
+  /* PLATFORM ICONS */
+  .icon { font-size:1.2em; }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width:6px; height:6px; }
+  ::-webkit-scrollbar-track { background:var(--panel); }
+  ::-webkit-scrollbar-thumb { background:var(--border); border-radius:3px; }
+  ::-webkit-scrollbar-thumb:hover { background:var(--accent); }
+
+  /* RESPONSIVE */
+  @media(max-width:600px) {
+    .header { padding:10px; }
+    .logo { font-size:1em; }
+    .main { padding:10px; }
+    .grid-3, .grid-2 { grid-template-columns:1fr; }
+  }
+
+  /* GLOW EFFECTS */
+  .glow-green { text-shadow:0 0 10px var(--green); color:var(--green); }
+  .glow-gold { text-shadow:0 0 10px var(--gold); color:var(--gold); }
+  .glow-accent { text-shadow:0 0 10px var(--accent); color:var(--accent); }
+
+  /* SEASON SELECTOR */
+  .season-select {
+    background: var(--panel);
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: var(--gold);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85em;
+    cursor: pointer;
+  }
+  .season-select option { background: var(--card); }
+
+  /* PIPELINE VISUAL */
+  .pipeline {
+    display:flex; align-items:center; gap:5px;
+    flex-wrap:wrap; margin:15px 0;
+  }
+  .pipe-node {
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:8px 12px;
+    font-size:0.75em;
+    text-align:center;
+    min-width:80px;
+  }
+  .pipe-node.active { border-color:var(--green); color:var(--green); }
+  .pipe-node.pending { border-color:var(--gold); color:var(--gold); }
+  .pipe-arrow { color:var(--dim); font-size:1.2em; }
+
+  /* FUND SPLIT DISPLAY */
+  .fund-split {
+    display:flex; gap:10px; margin:15px 0; flex-wrap:wrap;
+  }
+  .fund-block {
+    flex:1; min-width:80px;
+    background:var(--panel);
+    border-radius:10px;
+    padding:12px;
+    text-align:center;
+    border:1px solid var(--border);
+  }
+  .fund-pct { font-size:1.5em; font-weight:bold; }
+  .fund-name { font-size:0.65em; color:var(--dim); margin-top:4px; }
+
+  /* NOTIFICATION */
+  .notif {
+    position:fixed; bottom:20px; right:20px;
+    background:var(--card); border:1px solid var(--green);
+    border-radius:10px; padding:12px 20px;
+    font-size:0.85em; color:var(--green);
+    z-index:99999; transform:translateX(200%);
+    transition:transform 0.4s ease;
+    max-width:300px;
+  }
+  .notif.show { transform:translateX(0); }
+
+  .badge {
+    background:var(--accent); color:#000;
+    border-radius:10px; padding:2px 8px;
+    font-size:0.7em; font-weight:bold;
+  }
+  .badge.gold { background:var(--gold); }
+  .badge.green { background:var(--green); }
+  .badge.red { background:var(--red); color:white; }
 </style>
 </head>
-
 <body>
 
-<!-- ============================================
-     TOP COMMAND BAR
-     ============================================ -->
-<div id="topbar">
-  <div class="logo" onclick="showModal('event-modal')">
-    REBOUT
-    <span>FPV OPERATIONS PLATFORM</span>
+<!-- ═══════════════════════════════════════════════ -->
+<!--                    HEADER                       -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="header">
+  <div class="logo">
+    EMERGENT<span>PARKZ</span>
+    <div style="font-size:0.45em;color:var(--dim);letter-spacing:1px;">AI FACTORY PLATFORM v2.0</div>
   </div>
-  <div class="top-controls">
-    <div id="status-dot"></div>
-    <span id="clock">00:00:00</span>
-    <button class="top-btn" onclick="showModal('login-modal')">⚡ LOGIN</button>
-    <button class="top-btn blue" onclick="showModal('register-modal')">📋 REGISTER</button>
-    <button class="top-btn" onclick="showModal('camera-modal')">📷 CAMERAS</button>
-    <button class="top-btn blue" onclick="showModal('chat-modal')">💬 CHAT ROOMS</button>
-    <button class="top-btn" onclick="showModal('protocol-modal')">📥 PROTOCOL</button>
-    <button class="top-btn blue" onclick="showModal('vehicle-modal')">🚗 VEHICLES</button>
-    <button class="top-btn" onclick="showModal('admin-modal')">⚙️ ADMIN</button>
+  <div class="header-status">
+    <div class="status-pill">
+      <div class="dot green"></div>
+      <span id="systemStatus">SYSTEM ONLINE</span>
+    </div>
+    <div class="status-pill">
+      <div class="dot gold"></div>
+      <span id="agentCount">3 AGENTS READY</span>
+    </div>
+    <div class="status-pill">
+      <div class="dot green"></div>
+      <span>🇺🇸 4TH OF JULY MODE</span>
+    </div>
   </div>
-</div>
-
-<!-- AD BANNER TOP -->
-<div id="ad-top">
-  <div class="ad-slot">[ SPONSOR AD SLOT A — 728×90 ]</div>
-  <div style="font-size:10px; letter-spacing:1px;">POWERED BY REBOUT | EMERGENTPARKZ</div>
-  <div class="ad-slot">[ SPONSOR AD SLOT B — 728×90 ]</div>
-</div>
-
-<!-- TICKER TAPE -->
-<div id="ticker">
-  <div id="ticker-inner">
-    🏁 REBOUT PLATFORM LIVE — GLOBAL FPV OPERATIONS &nbsp;|&nbsp;
-    🚗 RC RACING — ENDURANCE COURSE ACTIVE &nbsp;|&nbsp;
-    📡 CAMERA FEEDS ONLINE — 4 ACTIVE STREAMS &nbsp;|&nbsp;
-    ⚡ NEXT EVENT: JUNKYARD WARS — REGISTER NOW &nbsp;|&nbsp;
-    🏆 LEADERBOARD UPDATED — TOP OPERATOR: GHOST_RIDER &nbsp;|&nbsp;
-    🔴 LIVE: URBAN COMBAT ZONE — SECTOR 7 &nbsp;|&nbsp;
-    🌐 GLOBAL PARTICIPANTS CONNECTED — JOIN THE ACTION &nbsp;|&nbsp;
-    📥 DOWNLOAD SAFETY PROTOCOL — REQUIRED FOR ALL OPERATORS &nbsp;|&nbsp;
-    🎯 PAINTBALL VEHICLES READY — ARENA OPEN &nbsp;|&nbsp;
-    🤖 MECHANIZED TRANSFORMERS — QUALIFYING ROUND 2 &nbsp;|&nbsp;
+  <div class="auth-area">
+    <button class="btn-google" onclick="googleLogin()">
+      <span>🔵</span> Connect Google
+    </button>
+    <div class="user-badge" id="userBadge">✅ Connected</div>
   </div>
 </div>
 
-<!-- ============================================
-     MAIN 3-COLUMN LAYOUT
-     ============================================ -->
-<div id="main-layout">
+<!-- SEASON BANNER -->
+<div class="season-banner">
+  🇺🇸 &nbsp; ACTIVE SEASON: 4TH OF JULY — PATRIOTIC PRODUCTION MODE &nbsp; 🎆 &nbsp; HUMAN OVERRIDE: ACTIVE &nbsp; 🇺🇸
+</div>
 
-  <!-- LEFT PANEL — AGENT CATEGORIES -->
-  <div id="left-panel">
-    <div class="panel-title">⚡ AGENT CATEGORIES</div>
+<!-- ═══════════════════════════════════════════════ -->
+<!--                  NAV TABS                       -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="nav-tabs">
+  <div class="tab active" onclick="showTab('dashboard')">🏠 Dashboard</div>
+  <div class="tab" onclick="showTab('agents')">🤖 3 Agents</div>
+  <div class="tab" onclick="showTab('platforms')">🔗 Platforms</div>
+  <div class="tab" onclick="showTab('production')">🎵 Production</div>
+  <div class="tab" onclick="showTab('revenue')">💰 Revenue</div>
+  <div class="tab" onclick="showTab('scheduler')">📅 Scheduler</div>
+  <div class="tab" onclick="showTab('trust')">🌿 Trust Fund</div>
+  <div class="tab" onclick="showTab('settings')">⚙️ Settings</div>
+</div>
 
-    <!-- Google Services -->
-    <div class="agent-category">
-      <div class="agent-cat-header active" onclick="toggleCategory(this)">
-        🔵 GOOGLE SERVICES <span>▼</span>
-      </div>
-      <div class="agent-list open">
-        <div class="agent-item" onclick="launchAgent('google-maps')"><div class="dot"></div>Google Maps</div>
-        <div class="agent-item" onclick="launchAgent('google-meet')"><div class="dot"></div>Google Meet</div>
-        <div class="agent-item" onclick="launchAgent('google-drive')"><div class="dot"></div>Google Drive</div>
-        <div class="agent-item" onclick="launchAgent('youtube')"><div class="dot"></div>YouTube Live</div>
-        <div class="agent-item" onclick="launchAgent('google-earth')"><div class="dot"></div>Google Earth</div>
-        <div class="agent-item" onclick="launchAgent('firebase')"><div class="dot"></div>Firebase DB</div>
-      </div>
+<!-- ═══════════════════════════════════════════════ -->
+<!--              MAIN CONTENT AREA                  -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="main">
+
+<!-- ────────────── DASHBOARD TAB ────────────── -->
+<div id="tab-dashboard" class="tab-content active">
+  <div class="section-title">🏠 COMMAND CENTER — HUMAN OVERRIDE ACTIVE</div>
+
+  <!-- STATS ROW -->
+  <div class="grid-4" style="margin-bottom:20px;">
+    <div class="stat-box">
+      <div class="stat-num glow-green" id="totalRevenue">$2,847</div>
+      <div class="stat-label">TOTAL REVENUE</div>
     </div>
-
-    <!-- Open Source Tools -->
-    <div class="agent-category">
-      <div class="agent-cat-header" onclick="toggleCategory(this)">
-        🟢 OPEN SOURCE <span>▶</span>
-      </div>
-      <div class="agent-list">
-        <div class="agent-item" onclick="launchAgent('mediamtx')"><div class="dot"></div>MediaMTX Stream</div>
-        <div class="agent-item" onclick="launchAgent('ffmpeg')"><div class="dot"></div>FFmpeg Engine</div>
-        <div class="agent-item" onclick="launchAgent('nodejs')"><div class="dot"></div>Node.js Hub</div>
-        <div class="agent-item" onclick="launchAgent('openlayers')"><div class="dot"></div>OpenLayers Map</div>
-        <div class="agent-item" onclick="launchAgent('mqtt')"><div class="dot"></div>MQTT Broker</div>
-        <div class="agent-item" onclick="launchAgent('grafana')"><div class="dot"></div>Grafana Telemetry</div>
-      </div>
+    <div class="stat-box">
+      <div class="stat-num glow-accent" id="activeAgents">3</div>
+      <div class="stat-label">ACTIVE AGENTS</div>
     </div>
-
-    <!-- FPV Operations -->
-    <div class="agent-category">
-      <div class="agent-cat-header" onclick="toggleCategory(this)">
-        🔴 FPV OPERATIONS <span>▶</span>
-      </div>
-      <div class="agent-list">
-        <div class="agent-item" onclick="launchAgent('fpv-drone')"><div class="dot yellow"></div>FPV Drone Ops</div>
-        <div class="agent-item" onclick="launchAgent('rc-ground')"><div class="dot yellow"></div>RC Ground Fleet</div>
-        <div class="agent-item" onclick="launchAgent('camera-hub')"><div class="dot"></div>Camera Hub</div>
-        <div class="agent-item" onclick="launchAgent('signal-monitor')"><div class="dot"></div>Signal Monitor</div>
-        <div class="agent-item" onclick="launchAgent('frequency-mgr')"><div class="dot yellow"></div>Frequency Manager</div>
-      </div>
+    <div class="stat-box">
+      <div class="stat-num glow-gold" id="totalPosts">247</div>
+      <div class="stat-label">POSTS PUBLISHED</div>
     </div>
-
-    <!-- Race Events -->
-    <div class="agent-category">
-      <div class="agent-cat-header" onclick="toggleCategory(this)">
-        🏁 RACE EVENTS <span>▶</span>
-      </div>
-      <div class="agent-list">
-        <div class="agent-item" onclick="launchAgent('endurance')"><div class="dot"></div>Endurance Course</div>
-        <div class="agent-item" onclick="launchAgent('oval-track')"><div class="dot yellow"></div>Oval Track</div>
-        <div class="agent-item" onclick="launchAgent('urban-zone')"><div class="dot red"></div>Urban Zone</div>
-        <div class="agent-item" onclick="launchAgent('junkyard')"><div class="dot red"></div>Junkyard Wars</div>
-        <div class="agent-item" onclick="launchAgent('multi-terrain')"><div class="dot"></div>Multi-Terrain</div>
-      </div>
+    <div class="stat-box">
+      <div class="stat-num" style="color:var(--purple);text-shadow:0 0 10px var(--purple);" id="trustFund">$427</div>
+      <div class="stat-label">TRUST FUND</div>
     </div>
-
-    <!-- Heavy Equipment -->
-    <div class="agent-category">
-      <div class="agent-cat-header" onclick="toggleCategory(this)">
-        🏗️ HEAVY EQUIPMENT <span>▶</span>
-      </div>
-      <div class="agent-list">
-        <div class="agent-item" onclick="launchAgent('excavator')"><div class="dot yellow"></div>Excavator Ops</div>
-        <div class="agent-item" onclick="launchAgent('crane')"><div class="dot"></div>Crane Control</div>
-        <div class="agent-item" onclick="launchAgent('bulldozer')"><div class="dot"></div>Bulldozer Fleet</div>
-        <div class="agent-item" onclick="launchAgent('forklift')"><div class="dot yellow"></div>Forklift Grid</div>
-      </div>
-    </div>
-
-    <!-- Streaming -->
-    <div class="agent-category">
-      <div class="agent-cat-header" onclick="toggleCategory(this)">
-        📡 STREAMING <span>▶</span>
-      </div>
-      <div class="agent-list">
-        <div class="agent-item" onclick="launchAgent('youtube-stream')"><div class="dot red"></div>YouTube Live</div>
-        <div class="agent-item" onclick="launchAgent('twitch')"><div class="dot red"></div>Twitch Stream</div>
-        <div class="agent-item" onclick="launchAgent('rtmp-server')"><div class="dot"></div>RTMP Server</div>
-        <div class="agent-item" onclick="launchAgent('hls-output')"><div class="dot"></div>HLS Output</div>
-        <div class="agent-item" onclick="launchAgent('obs-relay')"><div class="dot yellow"></div>OBS Relay</div>
-      </div>
-    </div>
-
-    <!-- Safety -->
-    <div class="agent-category">
-      <div class="agent-cat-header" onclick="toggleCategory(this)">
-        🛡️ SAFETY SYSTEMS <span>▶</span>
-      </div>
-      <div class="agent-list">
-        <div class="agent-item" onclick="showModal('emergency-modal')"><div class="dot red"></div>Emergency Stop</div>
-        <div class="agent-item" onclick="launchAgent('personnel-alert')"><div class="dot yellow"></div>Personnel Alert</div>
-        <div class="agent-item" onclick="launchAgent('signal-loss')"><div class="dot"></div>Signal Loss Detect</div>
-        <div class="agent-item" onclick="launchAgent('geo-fence')"><div class="dot"></div>Geo-Fence Monitor</div>
-        <div class="agent-item" onclick="showModal('protocol-modal')"><div class="dot yellow"></div>Safety Protocol</div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- CENTER PANEL -->
-  <div id="center-panel">
+  <!-- AGENT STATUS OVERVIEW -->
+  <div class="grid-3" style="margin-bottom:20px;">
 
-    <!-- CAMERA MOSAIC -->
-    <div id="camera-section">
-      <div class="section-header">
-        <div class="section-title">📷 LIVE CAMERA FEEDS</div>
-        <div class="view-controls">
-          <button class="view-btn active" onclick="setView('quad')">QUAD</button>
-          <button class="view-btn" onclick="setView('single')">SINGLE</button>
-          <button class="view-btn" onclick="setView('pip')">PIP</button>
-          <button class="view-btn" onclick="setView('full')">FULL</button>
-        </div>
-      </div>
-
-      <div id="camera-mosaic">
-        <!-- Camera 1 -->
-        <div class="camera-cell active" id="cam-1" onclick="selectCamera(1)">
-          <div class="camera-feed"></div>
-          <div class="camera-overlay">
-            <div class="cam-label">📷 CAM-01 | FPV DRONE</div>
-            <div class="cam-status">
-              <div class="cam-signal">▶ LIVE</div>
-              <div class="cam-fps">30fps</div>
-            </div>
-          </div>
-        </div>
-        <!-- Camera 2 -->
-        <div class="camera-cell" id="cam-2" onclick="selectCamera(2)">
-          <div class="camera-feed"></div>
-          <div class="camera-overlay">
-            <div class="cam-label">📷 CAM-02 | RC GROUND</div>
-            <div class="cam-status">
-              <div class="cam-signal">▶ LIVE</div>
-              <div class="cam-fps">25fps</div>
-            </div>
-          </div>
-        </div>
-        <!-- Camera 3 -->
-        <div class="camera-cell" id="cam-3" onclick="selectCamera(3)">
-          <div class="camera-feed" style="background: repeating-linear-gradient(0deg, #0A0A0A, #0A0A0A 2px, #111 2px, #111 4px);"></div>
-          <div class="camera-overlay">
-            <div class="cam-label">📷 CAM-03 | OVERHEAD</div>
-            <div class="cam-status">
-              <div class="cam-signal" style="color:var(--gold);">⚠ WEAK</div>
-              <div class="cam-fps">15fps</div>
-            </div>
-          </div>
-        </div>
-        <!-- Camera 4 -->
-        <div class="camera-cell" id="cam-4" onclick="selectCamera(4)">
-          <div class="no-signal">◼ NO SIGNAL<br>CAM-04</div>
-          <div class="camera-overlay">
-            <div class="cam-label" style="color:#555;">📷 CAM-04 | RESERVE</div>
-            <div class="cam-status">
-              <div class="cam-signal" style="color:#555;">◼ OFFLINE</div>
-              <div class="cam-fps" style="color:#555;">--fps</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TELEMETRY BAR -->
-    <div id="telemetry-bar">
-      <div class="tele-item">
-        <span class="tele-label">SPEED</span>
-        <span class="tele-value green" id="t-speed">24.3</span>
-      </div>
-      <div class="tele-item">
-        <span class="tele-label">BATTERY</span>
-        <span class="tele-value gold" id="t-battery">78%</span>
-      </div>
-      <div class="tele-item">
-        <span class="tele-label">SIGNAL</span>
-        <span class="tele-value green" id="t-signal">-62dB</span>
-      </div>
-      <div class="tele-item">
-        <span class="tele-label">LATENCY</span>
-        <span class="tele-value" id="t-latency">42ms</span>
-      </div>
-      <div class="tele-item">
-        <span class="tele-label">ALTITUDE</span>
-        <span class="tele-value" id="t-altitude">12.4m</span>
-      </div>
-    </div>
-
-    <!-- QUICK COMMANDS -->
-    <div id="quick-commands">
-      <button class="quick-btn" onclick="sendCmd('ARM')">⚡ ARM</button>
-      <button class="quick-btn" onclick="sendCmd('DISARM')">🔒 DISARM</button>
-      <button class="quick-btn" onclick="sendCmd('HOLD')">⏸ HOLD</button>
-      <button class="quick-btn" onclick="sendCmd('RTH')">🏠 RTH</button>
-      <button class="quick-btn" onclick="sendCmd('LAUNCH')">🚀 LAUNCH</button>
-      <button class="quick-btn" onclick="sendCmd('LAND')">⬇ LAND</button>
-      <button class="quick-btn" onclick="sendCmd('CAM_SWITCH')">📷 CAM SW</button>
-      <button class="quick-btn" onclick="sendCmd('RECORD')">⏺ RECORD</button>
-      <button class="quick-btn red" onclick="showModal('emergency-modal')">🛑 E-STOP</button>
-    </div>
-
-    <!-- COMMAND TERMINAL -->
-    <div id="command-section">
-      <div class="section-header" style="margin-bottom:6px;">
-        <div class="section-title">⌨️ COMMAND TERMINAL</div>
-        <button class="view-btn" onclick="clearTerminal()">CLEAR</button>
-      </div>
-      <div id="terminal">
-        <div class="terminal-line"><span class="ts">[00:00:01]</span><span class="info">REBOUT PLATFORM INITIALIZED</span></div>
-        <div class="terminal-line"><span class="ts">[00:00:02]</span><span class="cmd">SYSTEM: Firebase connected</span></div>
-        <div class="terminal-line"><span class="ts">[00:00:03]</span><span class="cmd">CAMERAS: 3/4 streams active</span></div>
-        <div class="terminal-line"><span class="ts">[00:00:04]</span><span class="warn">WARNING: CAM-04 signal lost</span></div>
-        <div class="terminal-line"><span class="ts">[00:00:05]</span><span class="cmd">TELEMETRY: Bluetooth connected</span></div>
-        <div class="terminal-line"><span class="ts">[00:00:06]</span><span class="info">READY: Awaiting operator commands</span></div>
-      </div>
-      <div id="command-input-row">
-        <input type="text" id="command-input" placeholder="Enter command... (try: HELP, STATUS, LIST)" onkeydown="cmdKeydown(event)">
-        <button class="cmd-btn" onclick="executeCommand()">SEND</button>
-        <button class="cmd-btn" onclick="sendCmd('STATUS')" style="background:var(--blue-dark); border-color:var(--blue);">STATUS</button>
-      </div>
-    </div>
-
-    <!-- PARTICIPANTS + CHAT -->
-    <div id="social-section">
-      <!-- Participants -->
-      <div class="social-box">
-        <div class="social-box-header">
-          👥 PARTICIPANTS
-          <span id="participant-count" style="color:var(--green); font-family:var(--font-mono);">7/10</span>
-        </div>
-        <div class="social-box-body" id="participant-list">
-          <div class="participant-item">
-            <div class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--green);"></div>
-            <span style="flex:1;">GHOST_RIDER</span>
-            <span class="role-badge admin">ADMIN</span>
-          </div>
-          <div class="participant-item">
-            <div class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--green);"></div>
-            <span style="flex:1;">VIPER_FPV</span>
-            <span class="role-badge operator">OPS</span>
-          </div>
-          <div class="participant-item">
-            <div class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--green);"></div>
-            <span style="flex:1;">CAM_HAWK</span>
-            <span class="role-badge camera">CAM</span>
-          </div>
-          <div class="participant-item">
-            <div class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--green);"></div>
-            <span style="flex:1;">JUDGE_X</span>
-            <span class="role-badge judge">JUDGE</span>
-          </div>
-          <div class="participant-item">
-            <div class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--gold);"></div>
-            <span style="flex:1;">SPEED_DEMON</span>
-            <span class="role-badge spectator">SPEC</span>
-          </div>
-          <div class="participant-item">
-            <div class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--green);"></div>
-            <span style="flex:1;">IRON_CLAW</span>
-            <span class="role-badge operator">OPS</span>
-          </div>
-          <div class="participant-item">
-            <div class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--red);"></div>
-            <span style="flex:1;">DUST_DEVIL</span>
-            <span class="role-badge spectator">SPEC</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Chat -->
-      <div class="social-box">
-        <div class="social-box-header">
-          💬 LIVE CHAT
-          <span style="color:var(--green); font-family:var(--font-mono); font-size:9px;">ROOM: OPS-MAIN</span>
-        </div>
-        <div class="social-box-body" id="chat-messages">
-          <div class="chat-message"><span class="chat-name">GHOST_RIDER:</span><span class="chat-text">Platform is live. All operators check in.</span></div>
-          <div class="chat-message"><span class="chat-name">VIPER_FPV:</span><span class="chat-text">CAM-01 confirmed, drone ready on pad.</span></div>
-          <div class="chat-message"><span class="chat-name">CAM_HAWK:</span><span class="chat-text">CAM-02 and 03 streaming. 04 offline.</span></div>
-          <div class="chat-message"><span class="chat-name">JUDGE_X:</span><span class="chat-text">Race start in T-minus 10 minutes.</span></div>
-          <div class="chat-message"><span class="chat-name">IRON_CLAW:</span><span class="chat-text">Heavy equipment standing by sector 3.</span></div>
-        </div>
-        <div class="chat-input-row">
-          <input type="text" class="chat-input" id="chat-input" placeholder="Type message..." onkeydown="chatKeydown(event)">
-          <button class="chat-send" onclick="sendChat()">SEND</button>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- RIGHT PANEL -->
-  <div id="right-panel">
-
-    <!-- Emergency Stop -->
-    <div id="emergency-stop" onclick="showModal('emergency-modal')">
-      <span class="e-icon">🛑</span>
-      <div class="e-text">EMERGENCY STOP</div>
-    </div>
-
-    <!-- Event Info -->
-    <div class="panel-title">🏁 ACTIVE EVENT</div>
-    <div class="event-info-box">
-      <div class="event-name">JUNKYARD WARS — S01E01</div>
-      <div class="event-detail">
-        📍 Sector 7 — Urban Zone<br>
-        ⏱ Duration: 45 min<br>
-        👥 Operators: 6 active<br>
-        🏆 Prize: $500 + Trophy<br>
-        📡 Live on YouTube + Twitch<br>
-        🔴 Status: QUALIFYING
-      </div>
-    </div>
-
-    <!-- Leaderboard -->
-    <div class="panel-title">🏆 LEADERBOARD</div>
-    <div id="leaderboard">
-      <div class="leaderboard-item">
-        <div class="lb-rank gold">1</div>
+    <!-- AGENT 1 -->
+    <div class="panel agent-1">
+      <div class="panel-title">
+        <span style="font-size:1.5em;">🎨</span>
         <div>
-          <div class="lb-name">GHOST_RIDER</div>
-          <div class="lb-vehicle">FPV Drone | 1/6 RC</div>
+          <div style="color:var(--gold);">LIBERTY — Agent 1</div>
+          <div style="font-size:0.7em;color:var(--dim);">Creator | Art + Music</div>
         </div>
-        <div class="lb-score">9,840</div>
+        <span class="badge gold" id="liberty-status">READY</span>
       </div>
-      <div class="leaderboard-item">
-        <div class="lb-rank silver">2</div>
-        <div>
-          <div class="lb-name">VIPER_FPV</div>
-          <div class="lb-vehicle">FPV Drone</div>
-        </div>
-        <div class="lb-score">8,210</div>
+      <div class="toggle-row">
+        <span class="toggle-label">Agent Power</span>
+        <label class="toggle"><input type="checkbox" id="liberty-power" onchange="toggleAgent('liberty',this)"><span class="toggle-slider"></span></label>
       </div>
-      <div class="leaderboard-item">
-        <div class="lb-rank bronze">3</div>
-        <div>
-          <div class="lb-name">IRON_CLAW</div>
-          <div class="lb-vehicle">RC Excavator</div>
-        </div>
-        <div class="lb-score">7,650</div>
+      <div class="toggle-row">
+        <span class="toggle-label">Auto Create</span>
+        <label class="toggle"><input type="checkbox" id="liberty-auto"><span class="toggle-slider"></span></label>
       </div>
-      <div class="leaderboard-item">
-        <div class="lb-rank" style="color:var(--white-dim);">4</div>
-        <div>
-          <div class="lb-name">DUST_DEVIL</div>
-          <div class="lb-vehicle">1/10 RC Car</div>
-        </div>
-        <div class="lb-score">6,120</div>
+      <div class="toggle-row">
+        <span class="toggle-label">Seasonal Lock</span>
+        <label class="toggle"><input type="checkbox" id="liberty-season" checked><span class="toggle-slider"></span></label>
       </div>
-      <div class="leaderboard-item">
-        <div class="lb-rank" style="color:var(--white-dim);">5</div>
-        <div>
-          <div class="lb-name">SPEED_DEMON</div>
-          <div class="lb-vehicle">1/24 RC Racer</div>
-        </div>
-        <div class="lb-score">5,880</div>
+      <div class="progress-bar" style="margin-top:12px;">
+        <div class="progress-fill" id="liberty-progress" style="width:0%;"></div>
+      </div>
+      <div style="font-size:0.7em;color:var(--dim);margin-top:4px;" id="liberty-task">Awaiting activation</div>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <button class="btn btn-gold btn-sm" onclick="activateAgent('liberty')">▶ ACTIVATE</button>
+        <button class="btn btn-danger btn-sm" onclick="holdAgent('liberty')">⏸ HOLD</button>
+        <button class="btn btn-outline btn-sm" onclick="showTab('agents')">CONFIG</button>
       </div>
     </div>
 
-    <div style="height:12px;"></div>
+    <!-- AGENT 2 -->
+    <div class="panel agent-2">
+      <div class="panel-title">
+        <span style="font-size:1.5em;">📢</span>
+        <div>
+          <div style="color:var(--green);">EAGLE — Agent 2</div>
+          <div style="font-size:0.7em;color:var(--dim);">Distributor | Marketing</div>
+        </div>
+        <span class="badge green" id="eagle-status">READY</span>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">Agent Power</span>
+        <label class="toggle"><input type="checkbox" id="eagle-power" onchange="toggleAgent('eagle',this)"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">Auto Post</span>
+        <label class="toggle"><input type="checkbox" id="eagle-auto"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">Approval Required</span>
+        <label class="toggle"><input type="checkbox" id="eagle-approval" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="progress-bar" style="margin-top:12px;">
+        <div class="progress-fill" id="eagle-progress" style="width:0%;background:linear-gradient(90deg,var(--green),var(--accent));"></div>
+      </div>
+      <div style="font-size:0.7em;color:var(--dim);margin-top:4px;" id="eagle-task">Awaiting Liberty output</div>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <button class="btn btn-success btn-sm" onclick="activateAgent('eagle')">▶ ACTIVATE</button>
+        <button class="btn btn-danger btn-sm" onclick="holdAgent('eagle')">⏸ HOLD</button>
+        <button class="btn btn-outline btn-sm" onclick="showTab('agents')">CONFIG</button>
+      </div>
+    </div>
 
-    <!-- Portal Links -->
-    <div class="panel-title">🚪 PORTALS</div>
-    <div class="portal-link" onclick="showModal('camera-modal')">
-      <span class="portal-icon">📷</span>
-      <div>
-        <div class="portal-text">Camera Portal</div>
-        <div class="portal-sub">Add / manage streams</div>
+    <!-- AGENT 3 -->
+    <div class="panel agent-3">
+      <div class="panel-title">
+        <span style="font-size:1.5em;">💰</span>
+        <div>
+          <div style="color:var(--purple);">VAULT — Agent 3</div>
+          <div style="font-size:0.7em;color:var(--dim);">Revenue + Philanthropy</div>
+        </div>
+        <span class="badge" style="background:var(--purple);" id="vault-status">READY</span>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">Agent Power</span>
+        <label class="toggle"><input type="checkbox" id="vault-power" onchange="toggleAgent('vault',this)"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">Auto Invest</span>
+        <label class="toggle"><input type="checkbox" id="vault-auto"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">Trust Fund Active</span>
+        <label class="toggle"><input type="checkbox" id="vault-trust" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="progress-bar" style="margin-top:12px;">
+        <div class="progress-fill" id="vault-progress" style="width:0%;background:linear-gradient(90deg,var(--purple),var(--gold));"></div>
+      </div>
+      <div style="font-size:0.7em;color:var(--dim);margin-top:4px;" id="vault-task">Tracking revenue</div>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <button class="btn btn-purple btn-sm" onclick="activateAgent('vault')">▶ ACTIVATE</button>
+        <button class="btn btn-danger btn-sm" onclick="holdAgent('vault')">⏸ HOLD</button>
+        <button class="btn btn-outline btn-sm" onclick="showTab('revenue')">REPORT</button>
       </div>
     </div>
-    <div class="portal-link" onclick="showModal('chat-modal')">
-      <span class="portal-icon">💬</span>
-      <div>
-        <div class="portal-text">Chat Rooms</div>
-        <div class="portal-sub">Join / create rooms</div>
+  </div>
+
+  <!-- PIPELINE VISUAL -->
+  <div class="panel" style="margin-bottom:20px;">
+    <div class="panel-title">🔄 PRODUCTION PIPELINE</div>
+    <div class="pipeline">
+      <div class="pipe-node active">🎨 LIBERTY<br><small>Creates</small></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node pending">✅ YOU<br><small>Approve</small></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">📢 EAGLE<br><small>Distributes</small></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node pending">✅ YOU<br><small>Approve</small></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">💰 VAULT<br><small>Manages</small></div>
+      <div class="pipe-arrow">→</div>
+      <div class="pipe-node">📊 YOU<br><small>Review</small></div>
+    </div>
+  </div>
+
+  <!-- ACTIVITY LOG -->
+  <div class="panel">
+    <div class="panel-title">📋 SYSTEM LOG</div>
+    <div class="log-area" id="sysLog">
+      <div class="log-entry info">[SYSTEM] EmergentPARKZ AI Factory Platform v2.0 initialized</div>
+      <div class="log-entry">[SYSTEM] 3 Agents loaded: LIBERTY, EAGLE, VAULT</div>
+      <div class="log-entry warn">[SYSTEM] Season: 🇺🇸 4TH OF JULY — Patriotic Production Mode</div>
+      <div class="log-entry">[SYSTEM] Human Override: ACTIVE — All outputs require approval</div>
+      <div class="log-entry info">[SYSTEM] Awaiting operator commands...</div>
+    </div>
+    <button class="btn btn-outline btn-sm" style="margin-top:8px;" onclick="clearLog()">Clear Log</button>
+  </div>
+</div>
+
+<!-- ────────────── AGENTS TAB ────────────── -->
+<div id="tab-agents" class="tab-content">
+  <div class="section-title">🤖 3 AGENT CONTROL BOARD</div>
+
+  <!-- MASTER CONTROLS -->
+  <div class="panel" style="margin-bottom:20px;border-color:var(--gold);">
+    <div class="panel-title">⚡ MASTER CONTROLS — HUMAN OVERRIDE</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+      <button class="btn btn-success" onclick="activateAll()">▶ ACTIVATE ALL AGENTS</button>
+      <button class="btn btn-danger" onclick="holdAll()">⏸ HOLD ALL AGENTS</button>
+      <button class="btn btn-gold" onclick="requestApproval()">✅ APPROVE CURRENT OUTPUT</button>
+      <button class="btn btn-outline" onclick="resetAll()">🔄 RESET ALL</button>
+    </div>
+    <div style="margin-top:15px;">
+      <label class="form-label">🗓️ CURRENT SEASON / THEME:</label>
+      <select class="season-select" id="currentSeason" onchange="updateSeason(this.value)">
+        <option value="july4">🇺🇸 4th of July — Patriotic</option>
+        <option value="fall">🍂 Fall Season</option>
+        <option value="halloween">🎃 Halloween</option>
+        <option value="thanksgiving">🦃 Thanksgiving</option>
+        <option value="christmas">🎄 Christmas</option>
+        <option value="newyear">🎆 New Year</option>
+        <option value="valentines">❤️ Valentine's Day</option>
+        <option value="spring">🌸 Spring / Easter</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="grid-3">
+
+    <!-- LIBERTY FULL CONFIG -->
+    <div class="agent-card" style="border-color:var(--gold);">
+      <div class="agent-header">
+        <div>
+          <div class="agent-name" style="color:var(--gold);">🎨 LIBERTY</div>
+          <div class="agent-role">Agent 1 — Creator</div>
+          <div class="agent-role">Art + Music + Collectibles</div>
+        </div>
+        <div class="agent-avatar" style="border-color:var(--gold);background:rgba(255,215,0,0.1);">🎨</div>
+      </div>
+
+      <div style="font-size:0.75em;color:var(--dim);margin-bottom:12px;padding:8px;background:var(--panel);border-radius:6px;">
+        Generates AI art, music, digital collectibles. Arranges lyrics per season. Outputs to YOU for approval before anything publishes.
+      </div>
+
+      <div style="font-size:0.8em;font-weight:bold;margin-bottom:8px;color:var(--gold);">POWER TOGGLES:</div>
+      <div class="toggle-row">
+        <span class="toggle-label">🔴 Agent Power</span>
+        <label class="toggle"><input type="checkbox" onchange="toggleAgent('liberty',this)"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🎨 AI Art Generation</span>
+        <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🎵 Music Production</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">📝 Lyrics Arrangement</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🛍️ Drop Ship Designs</span>
+        <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🔒 Seasonal Lock</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+
+      <div style="margin-top:15px;padding:10px;background:var(--panel);border-radius:8px;">
+        <div style="font-size:0.75em;color:var(--dim);">CURRENT TASK:</div>
+        <div style="font-size:0.8em;color:var(--gold);margin-top:4px;" id="liberty-current">🇺🇸 4th of July Patriotic Music Brief</div>
+        <div class="progress-bar"><div class="progress-fill" style="width:35%;"></div></div>
+        <div style="font-size:0.7em;color:var(--dim);">35% — Composing patriotic theme</div>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <button class="btn btn-gold btn-sm" onclick="activateAgent('liberty')">▶ ACTIVATE</button>
+        <button class="btn btn-danger btn-sm" onclick="holdAgent('liberty')">⏸ HOLD</button>
+        <button class="btn btn-outline btn-sm" onclick="openBrief('liberty')">📋 BRIEF</button>
       </div>
     </div>
-    <div class="portal-link" onclick="showModal('protocol-modal')">
-      <span class="portal-icon">📥</span>
-      <div>
-        <div class="portal-text">Control Protocol</div>
-        <div class="portal-sub">Download safety docs</div>
+
+    <!-- EAGLE FULL CONFIG -->
+    <div class="agent-card" style="border-color:var(--green);">
+      <div class="agent-header">
+        <div>
+          <div class="agent-name" style="color:var(--green);">📢 EAGLE</div>
+          <div class="agent-role">Agent 2 — Distributor</div>
+          <div class="agent-role">Marketing + Publishing</div>
+        </div>
+        <div class="agent-avatar" style="border-color:var(--green);background:rgba(0,255,136,0.1);">📢</div>
+      </div>
+
+      <div style="font-size:0.75em;color:var(--dim);margin-bottom:12px;padding:8px;background:var(--panel);border-radius:6px;">
+        Markets and distributes approved content across all platforms. Handles scheduling, posting, hashtags, and community outreach. NEVER posts without your approval.
+      </div>
+
+      <div style="font-size:0.8em;font-weight:bold;margin-bottom:8px;color:var(--green);">PLATFORM TOGGLES:</div>
+      <div class="toggle-row">
+        <span class="toggle-label">🔴 Agent Power</span>
+        <label class="toggle"><input type="checkbox" onchange="toggleAgent('eagle',this)"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">📱 TikTok</span>
+        <label class="toggle"><input type="checkbox" id="tog-tiktok"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">▶️ YouTube</span>
+        <label class="toggle"><input type="checkbox" id="tog-youtube"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">📸 Instagram</span>
+        <label class="toggle"><input type="checkbox" id="tog-instagram"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🐦 Twitter/X</span>
+        <label class="toggle"><input type="checkbox" id="tog-twitter"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">📘 Facebook</span>
+        <label class="toggle"><input type="checkbox" id="tog-facebook"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🛍️ Etsy</span>
+        <label class="toggle"><input type="checkbox" id="tog-etsy"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🎵 Spotify</span>
+        <label class="toggle"><input type="checkbox" id="tog-spotify"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">☁️ SoundCloud</span>
+        <label class="toggle"><input type="checkbox" id="tog-soundcloud"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">✅ Require Approval</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <button class="btn btn-success btn-sm" onclick="activateAgent('eagle')">▶ ACTIVATE</button>
+        <button class="btn btn-danger btn-sm" onclick="holdAgent('eagle')">⏸ HOLD</button>
+        <button class="btn btn-outline btn-sm" onclick="showTab('platforms')">🔗 CONNECT</button>
       </div>
     </div>
-    <div class="portal-link" onclick="showModal('event-modal')">
-      <span class="portal-icon">🏁</span>
-      <div>
-        <div class="portal-text">Event Info</div>
-        <div class="portal-sub">Schedule / results</div>
+
+    <!-- VAULT FULL CONFIG -->
+    <div class="agent-card" style="border-color:var(--purple);">
+      <div class="agent-header">
+        <div>
+          <div class="agent-name" style="color:var(--purple);">💰 VAULT</div>
+          <div class="agent-role">Agent 3 — Manager</div>
+          <div class="agent-role">Revenue + Philanthropy</div>
+        </div>
+        <div class="agent-avatar" style="border-color:var(--purple);background:rgba(155,89,182,0.1);">💰</div>
       </div>
-    </div>
-    <div class="portal-link" onclick="showModal('vehicle-modal')">
-      <span class="portal-icon">🚗</span>
-      <div>
-        <div class="portal-text">Vehicle Registry</div>
-        <div class="portal-sub">Register your build</div>
+
+      <div style="font-size:0.75em;color:var(--dim);margin-bottom:12px;padding:8px;background:var(--panel);border-radius:6px;">
+        Tracks all revenue, allocates to investments and Wildlife Trust Fund. Delivers weekly reports. YOU set the split percentages.
+      </div>
+
+      <div style="font-size:0.8em;font-weight:bold;margin-bottom:8px;color:var(--purple);">FUND TOGGLES:</div>
+      <div class="toggle-row">
+        <span class="toggle-label">🔴 Agent Power</span>
+        <label class="toggle"><input type="checkbox" onchange="toggleAgent('vault',this)"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">📊 Revenue Tracking</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">📈 Auto Invest</span>
+        <label class="toggle"><input type="checkbox"><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🌿 Wildlife Trust</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">📧 Weekly Reports</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">💳 Quarterly Payout</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+
+      <div style="margin-top:12px;">
+        <div style="font-size:0.8em;color:var(--purple);margin-bottom:8px;">FUND ALLOCATION:</div>
+        <div class="fund-split">
+          <div class="fund-block" style="border-color:var(--accent);">
+            <div class="fund-pct" style="color:var(--accent);">60%</div>
+            <div class="fund-name">Operations & Reinvestment</div>
+          </div>
+          <div class="fund-block" style="border-color:var(--gold);">
+            <div class="fund-pct" style="color:var(--gold);">25%</div>
+            <div class="fund-name">Capital Growth</div>
+          </div>
+          <div class="fund-block" style="border-color:var(--green);">
+            <div class="fund-pct" style="color:var(--green);">15%</div>
+            <div class="fund-name">Wildlife Trust</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;">
+        <button class="btn btn-purple btn-sm" onclick="activateAgent('vault')">▶ ACTIVATE</button>
+        <button class="btn btn-danger btn-sm" onclick="holdAgent('vault')">⏸ HOLD</button>
+        <button class="btn btn-outline btn-sm" onclick="showTab('revenue')">📊 REPORT</button>
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- AD BANNER BOTTOM -->
-<div id="ad-bottom">
-  <div class="ad-banner sponsor">🏆 SPONSOR YOUR TEAM — rebout.io/sponsor</div>
-  <div class="ad-banner">📡 STREAM YOUR EVENT — rebout.io/stream</div>
-  <div class="ad-banner">🚗 REGISTER VEHICLE — rebout.io/vehicles</div>
-  <div class="ad-banner sponsor">⚡ GO PRO — CLOUD ACCESS — rebout.io/pro</div>
-  <div class="ad-banner">🌐 GLOBAL EVENTS — rebout.io/events</div>
-</div>
+<!-- ────────────── PLATFORMS TAB ────────────── -->
+<div id="tab-platforms" class="tab-content">
+  <div class="section-title">🔗 PLATFORM CONNECTIONS — EAGLE AGENT TARGETS</div>
 
-<!-- FOOTER -->
-<div id="footer">
-  <div class="footer-logo">REBOUT</div>
-  <div style="font-size:9px; letter-spacing:2px; color:#444;">
-    FPV OPERATIONS PLATFORM | EMERGENTPARKZ © 2026
-  </div>
-  <div class="footer-links">
-    <a href="#">TERMS</a>
-    <a href="#">PRIVACY</a>
-    <a href="#">SAFETY</a>
-    <a href="#">CONTACT</a>
-    <a href="#">API</a>
-  </div>
-</div>
-
-<!-- TOAST CONTAINER -->
-<div id="toast-container"></div>
-
-<!-- ============================================
-     MODALS
-     ============================================ -->
-
-<!-- LOGIN MODAL -->
-<div class="modal-overlay" id="login-modal">
-  <div class="modal-box">
-    <div class="modal-header">
-      <div class="modal-title">⚡ OPERATOR LOGIN</div>
-      <button class="modal-close" onclick="closeModal('login-modal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <button class="google-btn" onclick="googleLogin()">
-        <svg width="18" height="18" viewBox="0 0 24 24">
-          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-        </svg>
-        Continue with Google
-      </button>
-      <div class="divider">— OR —</div>
-      <div class="form-group">
-        <label class="form-label">CALLSIGN / EMAIL</label>
-        <input type="text" class="form-input" placeholder="Enter callsign or email">
-      </div>
-      <div class="form-group">
-        <label class="form-label">PASSWORD</label>
-        <input type="password" class="form-input" placeholder="Enter password">
-      </div>
-      <button class="form-btn" onclick="emailLogin()">⚡ LOGIN TO PLATFORM</button>
-      <div style="text-align:center; margin-top:10px; font-size:11px; color:#666;">
-        No account? <span style="color:var(--red); cursor:pointer;" onclick="closeModal('login-modal'); showModal('register-modal');">REGISTER HERE</span>
-      </div>
+  <!-- VIDEO PLATFORMS -->
+  <div class="panel" style="margin-bottom:20px;">
+    <div class="panel-title">📹 VIDEO PLATFORMS</div>
+    <div class="social-grid">
+      <a href="https://www.tiktok.com" target="_blank" class="social-btn tiktok" id="plat-tiktok">
+        <span>📱</span> TikTok
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://studio.youtube.com" target="_blank" class="social-btn youtube" id="plat-youtube">
+        <span>▶️</span> YouTube
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://www.instagram.com" target="_blank" class="social-btn instagram" id="plat-instagram">
+        <span>📸</span> Instagram
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://www.twitch.tv" target="_blank" class="social-btn twitch" id="plat-twitch">
+        <span>🎮</span> Twitch
+        <div class="status-dot"></div>
+      </a>
     </div>
   </div>
+
+  <!-- SOCIAL MEDIA -->
+  <div class="panel" style="margin-bottom:20px;">
+    <div class="panel-title">📣 SOCIAL MEDIA</div>
+    <div class="social-grid">
+      <a href="https://twitter.com" target="_blank" class="social-btn twitter" id="plat-twitter">
+        <span>🐦</span> Twitter/X
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://www.facebook.com" target="_blank" class="social-btn facebook" id="plat-facebook">
+        <span>📘</span> Facebook
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://www.linkedin.com" target="_blank" class="social-btn linkedin" id="plat-linkedin">
+        <span>💼</span> LinkedIn
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://www.pinterest.com" target="_blank" class="social-btn pinterest" id="plat-pinterest">
+        <span>📌</span> Pinterest
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://discord.com" target="_blank" class="social-btn discord" id="plat-discord">
+        <span>💬</span> Discord
+        <div class="status-dot"></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- STORES -->
+  <div class="panel" style="margin-bottom:20px;">
+    <div class="panel-title">🛍️ STORES & MARKETPLACES</div>
+    <div class="social-grid">
+      <a href="https://www.etsy.com/your/shops/me/dashboard" target="_blank" class="social-btn etsy" id="plat-etsy">
+        <span>🛍️</span> Etsy Shop
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://www.redbubble.com" target="_blank" class="social-btn" style="border-color:#e41321;" id="plat-redbubble">
+        <span>🫧</span> Redbubble
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://merch.amazon.com" target="_blank" class="social-btn" style="border-color:#ff9900;" id="plat-amazon">
+        <span>📦</span> Amazon Merch
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://www.teepublic.com" target="_blank" class="social-btn" style="border-color:#00b0f0;" id="plat-teepublic">
+        <span>👕</span> TeePublic
+        <div class="status-dot"></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- MUSIC PLATFORMS -->
+  <div class="panel" style="margin-bottom:20px;">
+    <div class="panel-title">🎵 MUSIC PLATFORMS</div>
+    <div class="social-grid">
+      <a href="https://www.spotify.com" target="_blank" class="social-btn spotify" id="plat-spotify">
+        <span>🎵</span> Spotify
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://soundcloud.com" target="_blank" class="social-btn soundcloud" id="plat-soundcloud">
+        <span>☁️</span> SoundCloud
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://music.apple.com" target="_blank" class="social-btn" style="border-color:#fc3c44;" id="plat-apple">
+        <span>🍎</span> Apple Music
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://www.bandcamp.com" target="_blank" class="social-btn" style="border-color:#1da0c3;" id="plat-bandcamp">
+        <span>🎸</span> Bandcamp
+        <div class="status-dot"></div>
+      </a>
+      <a href="https://distrokid.com" target="_blank" class="social-btn" style="border-color:#ff6b6b;" id="plat-distrokid">
+        <span>🚀</span> DistroKid
+        <div class="status-dot"></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- AI TOOLS -->
+  <div class="panel" style="margin-bottom:20px;">
+    <div class="panel-title">🤖 AI PRODUCTION TOOLS</div>
+    <div class="social-grid">
+      <a href="https://suno.ai" target="_blank" class="social-btn" style="border-color:#7c3aed;">
+        <span>🎼</span> Suno AI
+      </a>
+      <a href="https://udio.com" target="_blank" class="social-btn" style="border-color:#2563eb;">
+        <span>🎹</span> Udio
+      </a>
+      <a href="https://chat.openai.com" target="_blank" class="social-btn" style="border-color:#10a37f;">
+        <span>🧠</span> ChatGPT
+      </a>
+      <a href="https://www.midjourney.com" target="_blank" class="social-btn" style="border-color:#9333ea;">
+        <span>🎨</span> Midjourney
+      </a>
+      <a href="https://runwayml.com" target="_blank" class="social-btn" style="border-color:#06b6d4;">
+        <span>🎬</span> Runway ML
+      </a>
+      <a href="https://elevenlabs.io" target="_blank" class="social-btn" style="border-color:#f59e0b;">
+        <span>🔊</span> ElevenLabs
+      </a>
+      <a href="https://www.canva.com" target="_blank" class="social-btn" style="border-color:#00c4cc;">
+        <span>✏️</span> Canva
+      </a>
+      <a href="https://firefly.adobe.com" target="_blank" class="social-btn" style="border-color:#ff6b35;">
+        <span>🔥</span> Adobe Firefly
+      </a>
+    </div>
+  </div>
+
+  <!-- CONNECT ALL BUTTON -->
+  <div class="panel" style="border-color:var(--gold);text-align:center;">
+    <div style="color:var(--gold);font-size:1em;font-weight:bold;margin-bottom:10px;">🔑 CONNECT YOUR ACCOUNTS</div>
+    <div style="font-size:0.8em;color:var(--dim);margin-bottom:15px;">
+      Click any platform above to open it → Log in → Return here and toggle it ON in Agent 2 (EAGLE) settings
+    </div>
+    <button class="btn btn-google" onclick="googleLogin()" style="margin:0 auto;">
+      🔵 Connect via Google (Master Auth)
+    </button>
+    <div style="margin-top:10px;font-size:0.75em;color:var(--dim);">
+      Google login links: YouTube, Drive, Gmail — Other platforms connect individually
+    </div>
+  </div>
 </div>
 
-<!-- REGISTER MODAL -->
-<div class="modal-overlay" id="register-modal">
-  <div class="modal-box">
-    <div class="modal-header">
-      <div class="modal-title">📋 OPERATOR REGISTRATION</div>
-      <button class="modal-close" onclick="closeModal('register-modal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <button class="google-btn" onclick="googleLogin()">
-        <svg width="18" height="18" viewBox="0 0 24 24">
-          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-        </svg>
-        Register with Google
-      </button>
-      <div class="divider">— OR MANUAL REGISTRATION —</div>
+<!-- ────────────── PRODUCTION TAB ────────────── -->
+<div id="tab-production" class="tab-content">
+  <div class="section-title">🎵 PRODUCTION STUDIO — LIBERTY AGENT WORKSPACE</div>
+
+  <div class="grid-2">
+    <!-- MUSIC BRIEF -->
+    <div class="panel" style="border-color:var(--gold);">
+      <div class="panel-title" style="color:var(--gold);">🎵 MUSIC PRODUCTION BRIEF</div>
+
       <div class="form-group">
-        <label class="form-label">CALLSIGN</label>
-        <input type="text" class="form-input" placeholder="Your operator callsign (e.g. GHOST_RIDER)">
-      </div>
-      <div class="form-group">
-        <label class="form-label">EMAIL</label>
-        <input type="email" class="form-input" placeholder="your@email.com">
-      </div>
-      <div class="form-group">
-        <label class="form-label">ROLE</label>
-        <select class="form-select">
-          <option>Operator</option>
-          <option>Camera Provider</option>
-          <option>Spectator</option>
-          <option>Judge</option>
-          <option>Event Organizer</option>
+        <label class="form-label">SEASON / THEME:</label>
+        <select class="form-input" id="prod-season">
+          <option>🇺🇸 4th of July — Patriotic</option>
+          <option>🍂 Fall Season</option>
+          <option>🎄 Christmas</option>
         </select>
       </div>
+
       <div class="form-group">
-        <label class="form-label">PASSWORD</label>
-        <input type="password" class="form-input" placeholder="Create strong password">
-      </div>
-      <div class="form-group">
-        <label class="form-label">SESSION REGISTRY FEE</label>
-        <select class="form-select">
-          <option>Day Pass — $9.99</option>
-          <option>Week Pass — $24.99</option>
-          <option>Monthly — $49.99</option>
-          <option>Annual Pro — $199.99</option>
+        <label class="form-label">MUSIC GENRE:</label>
+        <select class="form-input" id="prod-genre">
+          <option>Country / Americana</option>
+          <option>Rock / Classic Rock</option>
+          <option>Hip-Hop / Rap</option>
+          <option>Gospel / Inspirational</option>
+          <option>Pop</option>
+          <option>Blues</option>
+          <option>Folk</option>
         </select>
       </div>
-      <button class="form-btn" onclick="registerUser()">📋 CREATE OPERATOR ACCOUNT</button>
+
+      <div class="form-group">
+        <label class="form-label">MOOD / ENERGY:</label>
+        <select class="form-input" id="prod-mood">
+          <option>Patriotic & Uplifting</option>
+          <option>Powerful & Anthemic</option>
+          <option>Emotional & Reflective</option>
+          <option>Celebratory & Fun</option>
+          <option>Serious & Political</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">YOUR LYRICS / NOTES:</label>
+        <textarea class="form-input" id="prod-lyrics" rows="5" placeholder="Paste your lyrics here or describe what you want...&#10;&#10;Example: Verse 1 about freedom, chorus about unity, bridge about sacrifice..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">TARGET PLATFORMS:</label>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:5px;">
+          <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox" checked> YouTube</label>
+          <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox" checked> Spotify</label>
+          <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> TikTok</label>
+          <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> SoundCloud</label>
+        </div>
+      </div>
+
+      <button class="btn btn-gold btn-full" onclick="submitBrief()">
+        📋 SUBMIT TO LIBERTY AGENT
+      </button>
+    </div>
+
+    <!-- ART BRIEF -->
+    <div class="panel" style="border-color:var(--accent);">
+      <div class="panel-title" style="color:var(--accent);">🎨 DIGITAL ART BRIEF</div>
+
+      <div class="form-group">
+        <label class="form-label">ART STYLE:</label>
+        <select class="form-input">
+          <option>Digital Illustration</option>
+          <option>Photorealistic</option>
+          <option>Watercolor</option>
+          <option>Vintage / Retro</option>
+          <option>Abstract</option>
+          <option>Comic / Pop Art</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">DESCRIPTION:</label>
+        <textarea class="form-input" rows="4" placeholder="Describe the art piece...&#10;&#10;Example: Bald eagle soaring over American flag, patriotic colors, dramatic lighting..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">OUTPUT FORMAT:</label>
+        <select class="form-input">
+          <option>Digital Collectible (NFT-ready)</option>
+          <option>Print-on-Demand (Etsy)</option>
+          <option>Social Media Post</option>
+          <option>Album Cover</option>
+          <option>Merch Design</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">AI TOOL TO USE:</label>
+        <select class="form-input">
+          <option>Midjourney</option>
+          <option>DALL-E 3</option>
+          <option>Adobe Firefly</option>
+          <option>Stable Diffusion</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary btn-full" onclick="submitArtBrief()">
+        🎨 SUBMIT ART BRIEF TO LIBERTY
+      </button>
+
+      <button class="btn btn-outline btn-full" style="margin-top:8px;" onclick="window.open('https://www.midjourney.com','_blank')">
+        🔗 Open Midjourney Now
+      </button>
     </div>
   </div>
-</div>
 
-<!-- EMERGENCY MODAL -->
-<div class="modal-overlay" id="emergency-modal">
-  <div class="modal-box" style="border-color:var(--red); max-width:400px;">
-    <div class="modal-header" style="background:var(--red-dark);">
-      <div class="modal-title">🛑 EMERGENCY STOP</div>
-      <button class="modal-close" onclick="closeModal('emergency-modal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="emergency-content">
-        <span class="emergency-icon">🛑</span>
-        <div class="emergency-title">ALL STOP</div>
-        <div class="emergency-sub">
-          This will immediately halt ALL vehicles,<br>
-          drones, and heavy equipment in the field.<br>
-          <strong>This action cannot be undone remotely.</strong>
-        </div>
-        <button class="emergency-confirm-btn" onclick="executeEmergencyStop()">
-          🛑 CONFIRM EMERGENCY STOP
-        </button>
-        <button class="emergency-cancel-btn" onclick="closeModal('emergency-modal')">
-          Cancel — Return to Operations
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PROTOCOL MODAL -->
-<div class="modal-overlay" id="protocol-modal">
-  <div class="modal-box" style="max-width:650px;">
-    <div class="modal-header">
-      <div class="modal-title">📥 REBOUT SAFETY PROTOCOL</div>
-      <button class="modal-close" onclick="closeModal('protocol-modal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="protocol-section">
-        <div class="protocol-section-title">⚡ OPERATOR REQUIREMENTS</div>
-        <div class="protocol-section-body">
-          <ul>
-            <li>All operators must complete online safety certification</li>
-            <li>Valid ID and registration required for all events</li>
-            <li>Emergency stop familiarity test mandatory before field access</li>
-            <li>Minimum age: 16 (under 18 requires guardian consent)</li>
-          </ul>
-        </div>
-      </div>
-      <div class="protocol-section">
-        <div class="protocol-section-title">📡 FREQUENCY MANAGEMENT</div>
-        <div class="protocol-section-body">
-          <ul>
-            <li>All RC frequencies must be registered with the hub before operation</li>
-            <li>2.4GHz / 5.8GHz bands — no unauthorized transmitters</li>
-            <li>FPV video: 5.8GHz only in designated zones</li>
-            <li>Bluetooth telemetry: Class 2 devices only</li>
-          </ul>
-        </div>
-      </div>
-      <div class="protocol-section">
-        <div class="protocol-section-title">🛡️ SAFETY ZONES</div>
-        <div class="protocol-section-body">
-          <ul>
-            <li>Red Zone: Active vehicle operation — no foot traffic</li>
-            <li>Yellow Zone: Transition area — authorized personnel only</li>
-            <li>Green Zone: Spectator and pit area — public access</li>
-            <li>All zones monitored by camera and personnel</li>
-          </ul>
-        </div>
-      </div>
-      <div class="protocol-section">
-        <div class="protocol-section-title">🚗 VEHICLE STANDARDS</div>
-        <div class="protocol-section-body">
-          <ul>
-            <li>All vehicles must pass pre-event inspection</li>
-            <li>Failsafe / emergency stop required on all builds</li>
-            <li>Paintball vehicles: barrel plugs when not in active zone</li>
-            <li>Heavy equipment: certified operator license required</li>
-          </ul>
-        </div>
-      </div>
-      <button class="form-btn" onclick="downloadProtocol()">📥 DOWNLOAD FULL PROTOCOL PDF</button>
-    </div>
-  </div>
-</div>
-
-<!-- CAMERA MODAL -->
-<div class="modal-overlay" id="camera-modal">
-  <div class="modal-box" style="max-width:580px;">
-    <div class="modal-header">
-      <div class="modal-title">📷 CAMERA PORTAL</div>
-      <button class="modal-close" onclick="closeModal('camera-modal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-tabs">
-        <div class="modal-tab active" onclick="switchTab(this, 'tab-active-cams')">ACTIVE FEEDS</div>
-        <div class="modal-tab" onclick="switchTab(this, 'tab-add-cam')">ADD CAMERA</div>
-        <div class="modal-tab" onclick="switchTab(this, 'tab-cam-settings')">SETTINGS</div>
-      </div>
-      <div id="tab-active-cams" class="tab-content active">
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-          <div class="info-card">
-            <div class="card-icon">📷</div>
-            <div class="card-title">CAM-01 — FPV DRONE</div>
-            <div class="card-sub">rtsp://192.168.1.100:8554/cam1<br>Status: 🟢 LIVE | 30fps</div>
-          </div>
-          <div class="info-card">
-            <div class="card-icon">📷</div>
-            <div class="card-title">CAM-02 — RC GROUND</div>
-            <div class="card-sub">rtsp://192.168.1.101:8554/cam2<br>Status: 🟢 LIVE | 25fps</div>
-          </div>
-          <div class="info-card">
-            <div class="card-icon">📷</div>
-            <div class="card-title">CAM-03 — OVERHEAD</div>
-            <div class="card-sub">rtsp://192.168.1.102:8554/cam3<br>Status: 🟡 WEAK | 15fps</div>
-          </div>
-          <div class="info-card" style="border-color:#333; opacity:0.5;">
-            <div class="card-icon">📷</div>
-            <div class="card-title">CAM-04 — RESERVE</div>
-            <div class="card-sub">Not connected<br>Status: 🔴 OFFLINE</div>
-          </div>
-        </div>
-      </div>
-      <div id="tab-add-cam" class="tab-content">
-        <div class="form-group">
-          <label class="form-label">CAMERA NAME</label>
-          <input type="text" class="form-input" placeholder="e.g. CAM-05 — CHASE CAM">
-        </div>
-        <div class="form-group">
-          <label class="form-label">STREAM URL (RTSP/HLS/RTMP)</label>
-          <input type="text" class="form-input" placeholder="rtsp://192.168.1.x:8554/stream">
-        </div>
-        <div class="form-group">
-          <label class="form-label">CAMERA TYPE</label>
-          <select class="form-select">
-            <option>FPV Drone Camera</option>
-            <option>RC Ground Vehicle</option>
-            <option>Fixed Overhead</option>
-            <option>Chase Camera</option>
-            <option>Pit Camera</option>
-            <option>Spectator View</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">HARDWARE</label>
-          <select class="form-select">
-            <option>Raspberry Pi + USB Capture</option>
-            <option>ESP32-CAM</option>
-            <option>IP Camera Direct</option>
-            <option>OBS Virtual Camera</option>
-            <option>Phone Stream</option>
-          </select>
-        </div>
-        <button class="form-btn blue" onclick="addCamera()">📷 ADD CAMERA FEED</button>
-      </div>
-      <div id="tab-cam-settings" class="tab-content">
-        <div class="form-group">
-          <label class="form-label">DEFAULT VIEW MODE</label>
-          <select class="form-select">
-            <option>Quad View (2x2)</option>
-            <option>Single Full</option>
-            <option>Picture in Picture</option>
-            <option>Full Screen</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">STREAM QUALITY</label>
-          <select class="form-select">
-            <option>Auto (Adaptive)</option>
-            <option>High — 1080p 30fps</option>
-            <option>Medium — 720p 30fps</option>
-            <option>Low — 480p 15fps</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">SIGNAL LOSS ACTION</label>
-          <select class="form-select">
-            <option>Show No Signal Screen</option>
-            <option>Auto-reconnect (30s)</option>
-            <option>Switch to Backup Feed</option>
-            <option>Trigger Emergency Stop</option>
-          </select>
-        </div>
-        <button class="form-btn" onclick="saveCamSettings()">💾 SAVE SETTINGS</button>
+  <!-- APPROVAL QUEUE -->
+  <div class="panel" style="margin-top:20px;">
+    <div class="panel-title">✅ APPROVAL QUEUE — YOUR REVIEW REQUIRED</div>
+    <div id="approvalQueue">
+      <div style="text-align:center;color:var(--dim);padding:30px;font-size:0.85em;">
+        No items pending approval.<br>Submit a brief above to get Liberty working.
       </div>
     </div>
   </div>
 </div>
 
-<!-- CHAT ROOMS MODAL -->
-<div class="modal-overlay" id="chat-modal">
-  <div class="modal-box" style="max-width:500px;">
-    <div class="modal-header">
-      <div class="modal-title">💬 CHAT ROOMS</div>
-      <button class="modal-close" onclick="closeModal('chat-modal')">✕</button>
+<!-- ────────────── REVENUE TAB ────────────── -->
+<div id="tab-revenue" class="tab-content">
+  <div class="section-title">💰 REVENUE DASHBOARD — VAULT AGENT REPORT</div>
+
+  <!-- REVENUE STATS -->
+  <div class="grid-4" style="margin-bottom:20px;">
+    <div class="stat-box">
+      <div class="stat-num glow-gold">$2,847</div>
+      <div class="stat-label">TOTAL EARNED</div>
     </div>
-    <div class="modal-body">
-      <div style="margin-bottom:12px; font-size:11px; color:var(--white-dim); font-family:var(--font-mono);">
-        Max 10 participants per room | Login required to join
+    <div class="stat-box">
+      <div class="stat-num glow-green">$1,708</div>
+      <div class="stat-label">OPERATIONS (60%)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" style="color:var(--accent);">$712</div>
+      <div class="stat-label">CAPITAL GROWTH (25%)</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num" style="color:var(--purple);">$427</div>
+      <div class="stat-label">WILDLIFE TRUST (15%)</div>
+    </div>
+  </div>
+
+  <!-- REVENUE SOURCES -->
+  <div class="panel" style="margin-bottom:20px;">
+    <div class="panel-title">📊 REVENUE BY SOURCE</div>
+    <div class="rev-item">
+      <div class="rev-label">🛍️ Etsy</div>
+      <div class="rev-bar"><div class="rev-fill" style="width:75%;background:var(--orange);"></div></div>
+      <div class="rev-val">$2,140</div>
+    </div>
+    <div class="rev-item">
+      <div class="rev-label">🎵 Music</div>
+      <div class="rev-bar"><div class="rev-fill" style="width:20%;background:var(--green);"></div></div>
+      <div class="rev-val">$380</div>
+    </div>
+    <div class="rev-item">
+      <div class="rev-label">📹 YouTube</div>
+      <div class="rev-bar"><div class="rev-fill" style="width:8%;background:#ff0000;"></div></div>
+      <div class="rev-val">$127</div>
+    </div>
+    <div class="rev-item">
+      <div class="rev-label">🎨 Digital Art</div>
+      <div class="rev-bar"><div class="rev-fill" style="width:5%;background:var(--purple);"></div></div>
+      <div class="rev-val">$200</div>
+    </div>
+    <div class="rev-item">
+      <div class="rev-label">💼 Services</div>
+      <div class="rev-bar"><div class="rev-fill" style="width:3%;background:var(--accent);"></div></div>
+      <div class="rev-val">$0</div>
+    </div>
+  </div>
+
+  <!-- PAYOUT INFO -->
+  <div class="panel" style="border-color:var(--gold);">
+    <div class="panel-title" style="color:var(--gold);">💳 DEPOSIT-ONLY PAYOUT SYSTEM</div>
+    <div style="font-size:0.85em;color:var(--dim);margin-bottom:15px;">
+      Revenue flows IN only. Quarterly ACH deposits. No withdrawals triggered by system.
+    </div>
+    <div class="grid-2">
+      <div>
+        <div class="form-group">
+          <label class="form-label">PAYPAL LINK:</label>
+          <a href="https://paypal.me" target="_blank" class="btn btn-outline btn-full">💙 PayPal.me</a>
+        </div>
+        <div class="form-group">
+          <label class="form-label">CASH APP:</label>
+          <a href="https://cash.app" target="_blank" class="btn btn-success btn-full">💚 Cash App</a>
+        </div>
       </div>
-      <div class="card-grid">
-        <div class="info-card" onclick="joinRoom('OPS-MAIN')">
-          <div class="card-icon">⚡</div>
-          <div class="card-title">OPS-MAIN</div>
-          <div class="card-sub">7/10 participants<br>🟢 Active</div>
+      <div>
+        <div style="background:var(--panel);border-radius:8px;padding:15px;">
+          <div style="font-size:0.8em;color:var(--gold);font-weight:bold;margin-bottom:8px;">NEXT QUARTERLY DEPOSIT:</div>
+          <div style="font-size:1.5em;color:var(--green);font-weight:bold;">Q3 2025</div>
+          <div style="font-size:0.75em;color:var(--dim);margin-top:4px;">September 30, 2025</div>
+          <div style="font-size:0.8em;color:var(--accent);margin-top:8px;">Projected: $2,847</div>
         </div>
-        <div class="info-card" onclick="joinRoom('FPV-RACING')">
-          <div class="card-icon">🏁</div>
-          <div class="card-title">FPV-RACING</div>
-          <div class="card-sub">4/10 participants<br>🟢 Active</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────── SCHEDULER TAB ────────────── -->
+<div id="tab-scheduler" class="tab-content">
+  <div class="section-title">📅 CONTENT SCHEDULER — EAGLE AGENT QUEUE</div>
+
+  <div class="panel" style="margin-bottom:20px;">
+    <div class="panel-title">➕ SCHEDULE NEW CONTENT</div>
+    <div class="grid-2">
+      <div>
+        <div class="form-group">
+          <label class="form-label">CONTENT TITLE:</label>
+          <input class="form-input" type="text" placeholder="🇺🇸 4th of July Patriotic Track..." id="sched-title">
         </div>
-        <div class="info-card" onclick="joinRoom('HEAVY-EQ')">
-          <div class="card-icon">🏗️</div>
-          <div class="card-title">HEAVY-EQ</div>
-          <div class="card-sub">2/10 participants<br>🟢 Active</div>
+        <div class="form-group">
+          <label class="form-label">CONTENT TYPE:</label>
+          <select class="form-input" id="sched-type">
+            <option>🎵 Music Release</option>
+            <option>🎨 Digital Art Drop</option>
+            <option>📹 Video Post</option>
+            <option>🛍️ Etsy Listing</option>
+            <option>📱 Social Post</option>
+          </select>
         </div>
-        <div class="info-card" onclick="joinRoom('JUNKYARD')">
-          <div class="card-icon">🔧</div>
-          <div class="card-title">JUNKYARD</div>
-          <div class="card-sub">5/10 participants<br>🟢 Active</div>
+        <div class="form-group">
+          <label class="form-label">PUBLISH DATE:</label>
+          <input class="form-input" type="date" id="sched-date">
         </div>
-        <div class="info-card" onclick="joinRoom('SPECTATORS')">
-          <div class="card-icon">👁️</div>
-          <div class="card-title">SPECTATORS</div>
-          <div class="card-sub">9/10 participants<br>🟡 Almost Full</div>
+        <div class="form-group">
+          <label class="form-label">PUBLISH TIME:</label>
+          <input class="form-input" type="time" id="sched-time" value="09:00">
         </div>
-        <div class="info-card" onclick="joinRoom('ADMIN')">
-          <div class="card-icon">⚙️</div>
-          <div class="card-title">ADMIN</div>
-          <div class="card-sub">3/10 participants<br>🔒 Restricted</div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label class="form-label">TARGET PLATFORMS:</label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:5px;margin-top:5px;">
+            <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> TikTok</label>
+            <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> YouTube</label>
+            <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Instagram</label>
+            <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Twitter/X</label>
+            <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Facebook</label>
+            <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Etsy</label>
+            <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Spotify</label>
+            <label style="font-size:0.8em;display:flex;align-items:center;gap:4px;"><input type="checkbox"> SoundCloud</label>
+          </div>
         </div>
+        <div class="form-group">
+          <label class="form-label">NOTES / CAPTION:</label>
+          <textarea class="form-input" rows="4" placeholder="Add caption, hashtags, description...&#10;&#10;#4thofJuly #Patriotic #USA #Music"></textarea>
+        </div>
+        <button class="btn btn-primary btn-full" onclick="scheduleContent()">📅 ADD TO SCHEDULE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHEDULE QUEUE -->
+  <div class="panel">
+    <div class="panel-title">📋 UPCOMING SCHEDULE</div>
+    <div id="scheduleList">
+      <div class="task-item">
+        <div class="task-info">
+          <div class="task-name">🇺🇸 4th of July Music Drop</div>
+          <div class="task-desc">July 4, 2025 @ 9:00 AM — YouTube, Spotify, SoundCloud</div>
+        </div>
+        <div style="display:flex;gap:5px;">
+          <span class="badge gold">PENDING APPROVAL</span>
+          <button class="btn btn-success btn-sm" onclick="approveTask(this)">✅</button>
+          <button class="btn btn-danger btn-sm" onclick="removeTask(this)">🗑️</button>
+        </div>
+      </div>
+      <div class="task-item">
+        <div class="task-info">
+          <div class="task-name">🎨 Patriotic Art Collection Drop</div>
+          <div class="task-desc">July 4, 2025 @ 12:00 PM — Etsy, Instagram, Pinterest</div>
+        </div>
+        <div style="display:flex;gap:5px;">
+          <span class="badge gold">PENDING APPROVAL</span>
+          <button class="btn btn-success btn-sm" onclick="approveTask(this)">✅</button>
+          <button class="btn btn-danger btn-sm" onclick="removeTask(this)">🗑️</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────── TRUST FUND TAB ────────────── -->
+<div id="tab-trust" class="tab-content">
+  <div class="section-title">🌿 WILDLIFE PRESERVATION TRUST — VAULT AGENT</div>
+
+  <div class="grid-2">
+    <div class="panel" style="border-color:var(--green);">
+      <div class="panel-title" style="color:var(--green);">🦅 TRUST FUND STATUS</div>
+      <div class="stat-box" style="margin-bottom:15px;">
+        <div class="stat-num" style="color:var(--green);">$427</div>
+        <div class="stat-label">TOTAL CONTRIBUTED</div>
+      </div>
+      <div class="rev-item">
+        <div class="rev-label">🦬 Bison Fund</div>
+        <div class="rev-bar"><div class="rev-fill" style="width:60%;background:var(--gold);"></div></div>
+        <div class="rev-val">$256</div>
+      </div>
+      <div class="rev-item">
+        <div class="rev-label">🦅 Eagle Fund</div>
+        <div class="rev-bar"><div class="rev-fill" style="width:30%;background:var(--accent);"></div></div>
+        <div class="rev-val">$128</div>
+      </div>
+      <div class="rev-item">
+        <div class="rev-label">🌊 River Fund</div>
+        <div class="rev-bar"><div class="rev-fill" style="width:10%;background:var(--green);"></div></div>
+        <div class="rev-val">$43</div>
+      </div>
+    </div>
+
+    <div class="panel" style="border-color:var(--green);">
+      <div class="panel-title" style="color:var(--green);">🌿 CONSERVATION PARTNERS</div>
+      <div class="social-grid">
+        <a href="https://www.worldwildlife.org" target="_blank" class="social-btn" style="border-color:var(--green);">
+          <span>🐼</span> WWF
+        </a>
+        <a href="https://www.nature.org" target="_blank" class="social-btn" style="border-color:var(--green);">
+          <span>🌿</span> Nature Conservancy
+        </a>
+        <a href="https://www.nwf.org" target="_blank" class="social-btn" style="border-color:var(--green);">
+          <span>🦅</span> Natl Wildlife Fed
+        </a>
+        <a href="https://americanbison.org" target="_blank" class="social-btn" style="border-color:var(--gold);">
+          <span>🦬</span> American Bison
+        </a>
+      </div>
+      <div style="margin-top:15px;padding:12px;background:var(--panel);border-radius:8px;font-size:0.8em;color:var(--dim);">
+        💡 <strong style="color:var(--green);">TIP:</strong> Your music and art themed around wildlife and patriotism creates a powerful brand story that drives both sales AND conservation impact. This is your signature.
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ────────────── SETTINGS TAB ────────────── -->
+<div id="tab-settings" class="tab-content">
+  <div class="section-title">⚙️ SYSTEM SETTINGS</div>
+
+  <div class="grid-2">
+    <div class="panel">
+      <div class="panel-title">🔑 API CONNECTIONS</div>
+      <div class="form-group">
+        <label class="form-label">OpenAI API Key (ChatGPT):</label>
+        <input class="form-input" type="password" placeholder="sk-..." id="openai-key">
       </div>
       <div class="form-group">
-        <label class="form-label">CREATE NEW ROOM</label>
-        <input type="text" class="form-input" placeholder="Room name..." id="new-room-name">
+        <label class="form-label">YouTube API Key:</label>
+        <input class="form-input" type="password" placeholder="AIza..." id="yt-key">
       </div>
-      <button class="form-btn blue" onclick="createRoom()">💬 CREATE ROOM</button>
+      <div class="form-group">
+        <label class="form-label">Make.com Webhook URL:</label>
+        <input class="form-input" type="text" placeholder="https://hook.make.com/..." id="make-webhook">
+      </div>
+      <button class="btn btn-primary btn-full" onclick="saveKeys()">💾 SAVE KEYS</button>
+      <div style="font-size:0.7em;color:var(--dim);margin-top:8px;">Keys stored locally in your browser only. Never shared.</div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-title">🎛️ SYSTEM RULES</div>
+      <div class="toggle-row">
+        <span class="toggle-label">✅ Require approval on all posts</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🔒 Seasonal theme lock</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">📧 Weekly revenue email</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">🌿 Wildlife Trust auto-allocate</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="toggle-row">
+        <span class="toggle-label">📊 Activity logging</span>
+        <label class="toggle"><input type="checkbox" checked><span class="toggle-slider"></span></label>
+      </div>
+      <div class="form-group" style="margin-top:15px;">
+        <label class="form-label">OPERATOR NAME:</label>
+        <input class="form-input" type="text" placeholder="EmergentPARKZ" id="operator-name">
+      </div>
+      <button class="btn btn-gold btn-full" onclick="saveSettings()">💾 SAVE SETTINGS</button>
     </div>
   </div>
 </div>
 
-<!-- VEHICLE MODAL -->
-<div class="modal-overlay" id="vehicle-modal">
-  <div class="modal-box" style="max-width:600px;">
-    <div class="modal-header">
-      <div class="modal-title">🚗 VEHICLE REGISTRY</div>
-      <button class="modal-close" onclick="closeModal('vehicle-modal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-tabs">
-        <div class="modal-tab active" onclick="switchTab(this, 'tab-my-vehicles')">MY VEHICLES</div>
-        <div class="modal-tab" onclick="switchTab(this, 'tab-add-vehicle')">REGISTER NEW</div>
-        <div class="modal-tab" onclick="switchTab(this, 'tab-all-vehicles')">ALL REGISTERED</div>
-      </div>
-      <div id="tab-my-vehicles" class="tab-content active">
-        <div class="card-grid">
-          <div class="info-card">
-            <div class="card-icon">🚁</div>
-            <div class="card-title">GHOST-1</div>
-            <div class="card-sub">FPV Drone | 5" Quad<br>🟢 Registered</div>
-          </div>
-          <div class="info-card">
-            <div class="card-icon">🚗</div>
-            <div class="card-title">VIPER-X</div>
-            <div class="card-sub">1/10 RC Car | Traxxas<br>🟢 Registered</div>
-          </div>
-        </div>
-      </div>
-      <div id="tab-add-vehicle" class="tab-content">
-        <div class="form-group">
-          <label class="form-label">VEHICLE NAME / CALLSIGN</label>
-          <input type="text" class="form-input" placeholder="e.g. GHOST-1, IRON-CLAW-3">
-        </div>
-        <div class="form-group">
-          <label class="form-label">VEHICLE CATEGORY</label>
-          <select class="form-select">
-            <option>FPV Drone</option>
-            <option>RC Ground — 1/24 Scale</option>
-            <option>RC Ground — 1/10 Scale</option>
-            <option>RC Ground — 1/6 Scale</option>
-            <option>RC Motorcycle</option>
-            <option>RC Race Car</option>
-            <option>RC Construction Equipment</option>
-            <option>Mechanized Transformer</option>
-            <option>Paintball Vehicle</option>
-            <option>Custom Build</option>
-            <option>Heavy Equipment (Full Size)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">MANUFACTURER / MAKE</label>
-          <input type="text" class="form-input" placeholder="e.g. Traxxas, DJI, Custom">
-        </div>
-        <div class="form-group">
-          <label class="form-label">FREQUENCY / PROTOCOL</label>
-          <select class="form-select">
-            <option>2.4GHz FHSS</option>
-            <option>2.4GHz DSM2/DSMX</option>
-            <option>5.8GHz FPV Video</option>
-            <option>Wi-Fi 2.4GHz</option>
-            <option>Wi-Fi 5GHz</option>
-            <option>Bluetooth</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label class="form-label">CAMERA EQUIPPED</label>
-          <select class="form-select">
-            <option>Yes — Analog FPV</option>
-            <option>Yes — Digital FPV</option>
-            <option>Yes — IP Camera</option>
-            <option>No Camera</option>
-          </select>
-        </div>
-        <button class="form-btn" onclick="registerVehicle()">🚗 REGISTER VEHICLE</button>
-      </div>
-      <div id="tab-all-vehicles" class="tab-content">
-        <div style="font-family:var(--font-mono); font-size:11px; color:var(--white-dim); line-height:2;">
-          🚁 GHOST-1 — FPV Drone — GHOST_RIDER<br>
-          🚗 VIPER-X — 1/10 RC — VIPER_FPV<br>
-          🏗️ IRON-3 — RC Excavator — IRON_CLAW<br>
-          🚗 DUST-R — 1/24 RC — DUST_DEVIL<br>
-          🚗 SPEED-1 — 1/24 Racer — SPEED_DEMON<br>
-          🤖 MECH-X — Transformer — IRON_CLAW<br>
-          🎯 PAINT-1 — Paintball — VIPER_FPV<br>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+</div><!-- end main -->
 
-<!-- EVENT MODAL -->
-<div class="modal-overlay" id="event-modal">
-  <div class="modal-box" style="max-width:620px;">
-    <div class="modal-header">
-      <div class="modal-title">🏁 REBOUT EVENTS</div>
-      <button class="modal-close" onclick="closeModal('event-modal')">✕</button>
-    </div>
-    <div class="modal-body">
-      <div class="modal-tabs">
-        <div class="modal-tab active" onclick="switchTab(this, 'tab-active-event')">ACTIVE</div>
-        <div class="modal-tab" onclick="switchTab(this, 'tab-schedule')">SCHEDULE</div>
-        <div class="modal-tab" onclick="switchTab(this, 'tab-results')">RESULTS</div>
-        <div class="modal-tab" onclick="switchTab(this, 'tab-tickets')">TICKETS</div>
-      </div>
-      <div id="tab-active-event" class="tab-content active">
-        <div class="event-info-box">
-          <div class="event-name">🔴 LIVE — JUNKYARD WARS S01E01</div>
-          <div class="event-detail">
-            📍 Location: Sector 7 Urban Zone<br>
-            ⏱ Duration: 45 minutes<br>
-            👥 Operators: 6 active / 10 max<br>
-            🏆 Prize Pool: $500 + Championship Trophy<br>
-            📡 Streaming: YouTube Live + Twitch<br>
-            🔴 Current Phase: QUALIFYING ROUND 2<br>
-            ⏰ Next Phase: 8 minutes
-          </div>
-        </div>
-        <div class="card-grid">
-          <div class="info-card">
-            <div class="card-icon">🏁</div>
-            <div class="card-title">ENDURANCE COURSE</div>
-            <div class="card-sub">Next: 2 hours<br>Reg open</div>
-          </div>
-          <div class="info-card">
-            <div class="card-icon">🔵</div>
-            <div class="card-title">OVAL TRACK RACE</div>
-            <div class="card-sub">Tomorrow 14:00<br>Reg open</div>
-          </div>
-        </div>
-      </div>
-      <div id="tab-schedule" class="tab-content">
-        <div style="font-family:var(--font-mono); font-size:11px; color:var(--white-dim); line-height:2.2;">
-          🔴 NOW — Junkyard Wars S01E01<br>
-          🟡 +2h — Endurance Course — Open Registration<br>
-          🟢 Tomorrow 10:00 — FPV Drone Racing<br>
-          🟢 Tomorrow 14:00 — Oval Track Grand Prix<br>
-          🟢 Tomorrow 18:00 — Urban Combat Zone<br>
-          🔵 Weekend — Multi-Terrain Championship<br>
-          🔵 Next Week — Mechanized Transformer Battle<br>
-        </div>
-      </div>
-      <div id="tab-results" class="tab-content">
-        <div style="font-family:var(--font-mono); font-size:11px; color:var(--white-dim); line-height:2.2;">
-          🏆 Last Event: FPV Sprint — GHOST_RIDER wins<br>
-          🥈 2nd: VIPER_FPV — 0.4s behind<br>
-          🥉 3rd: IRON_CLAW — RC Excavator class<br>
-          <br>
-          📊 Season Points:<br>
-          1. GHOST_RIDER — 9,840 pts<br>
-          2. VIPER_FPV — 8,210 pts<br>
-          3. IRON_CLAW — 7,650 pts<br>
-        </div>
-      </div>
-      <div id="tab-tickets" class="tab-content">
-        <div class="card-grid">
-          <div class="info-card" onclick="buyTicket('spectator')">
-            <div class="card-icon">👁️</div>
-            <div class="card-title">SPECTATOR</div>
-            <div class="card-sub">$5 / event<br>View only</div>
-          </div>
-          <div class="info-card" onclick="buyTicket('operator')">
-            <div class="card-icon">⚡</div>
-            <div class="card-title">OPERATOR</div>
-            <div class="card-sub">$25 / event<br>Full access</div>
-          </div>
-          <div class="info-card" onclick="buyTicket('vip')">
-            <div class="card-icon">🏆</div>
-            <div class="card-title">VIP PACKAGE</div>
-            <div class="card-sub">$75 / event<br>Pit + cloud access</div>
-          </div>
-          <div class="info-card" onclick="buyTicket('season')">
-            <div class="card-icon">🌐</div>
-            <div class="card-title">SEASON PASS</div>
-            <div class="card-sub">$199 / season<br>All events + pro</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<!-- ═══════════════════════════════════════════════ -->
+<!--                   MODALS                        -->
+<!-- ═══════════════════════════════════════════════ -->
 
-<!-- ADMIN MODAL -->
-<div class="modal-overlay" id="admin-modal">
-  <div class="modal-box" style="max-width:600px;">
-    <div class="modal-header">
-      <div class="modal-title">⚙️ ADMIN PANEL</div>
-      <button class="modal-close" onclick="closeModal('admin-modal')">✕</button>
+<!-- GOOGLE LOGIN MODAL -->
+<div class="modal-overlay" id="modal-google">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('modal-google')">✕</button>
+    <div class="modal-title">🔵 Connect Google Account</div>
+    <div style="font-size:0.85em;color:var(--dim);margin-bottom:20px;">
+      Connecting Google gives you access to YouTube, Google Drive, and Gmail integration.
     </div>
-    <div class="modal-body">
-      <div class="modal-tabs">
-        <div class="modal-tab active" onclick="switchTab(this, 'tab-participants-admin')">PARTICIPANTS</div>
-        <div class="modal-tab" onclick="switchTab(this, 'tab-system')">SYSTEM</div>
-        <div class="modal-tab" onclick="switchTab(this, 'tab-broadcast')">BROADCAST</div>
-      </div>
-      <div id="tab-participants-admin" class="tab-content active">
-        <div style="font-family:var(--font-mono); font-size:11px; margin-bottom:10px; color:var(--white-dim);">
-          CONNECTED PARTICIPANTS — 7/10
-        </div>
-        <div
+    <div class="form-group">
+      <label class="form-label">Google Email:</label>
+      <input class="form-input" type="email" id="google-email" placeholder="yourname@gmail.com">
+    </div>
+    <div style="display:flex;gap:10px;margin-top:20px;">
+      <button class="btn btn-google" style="flex:1;" onclick="completeGoogleLogin()">
